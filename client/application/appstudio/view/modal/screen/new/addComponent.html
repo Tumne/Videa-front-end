@@ -1,0 +1,12 @@
+<div class="add-component-modal">
+    <div ng-if="vm.ready">
+     <plugin-component ng-repeat="oneComponent in vm.componentList" model="oneComponent" purpose="vm.purpose.VIEW" options="vm.options"></plugin-component>
+     <div class="clearfix"></div>
+    </div>
+    <!--<ui-select tagging ng-model="vm.form.component" theme="bootstrap" title="Choose a size" on-select="vm.changed($item, $model)">
+    <ui-select-match placeholder="weight">{{$select.selected}}</ui-select-match>
+    <ui-select-choices repeat="oneComponent in vm.availableComponents | filter: $select.search">
+    <div>{{oneComponent}}</div>
+    </ui-select-choices>
+    </ui-select>-->
+</div>

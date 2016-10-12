@@ -1,0 +1,45 @@
+.app-name {
+  padding-top: 30px;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.app-name-input {
+  margin: 10px 30px 0 30px;
+  width: 540px;
+}
+
+// .app-type-circle {
+//   img {
+//     width: 60px;
+//     height: 60px;
+//   }
+//   margin: 0 15px 30px;
+// }
+
+.app-type-selected-filter {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: $theme_greyblue;
+  opacity: 0.6;
+  margin: -57px 0 0 1px
+
+}
+.apptype-container {
+    text-align: center;
+    margin-bottom: 20px;
+    .dynamic {
+        display: inline-block;
+    }
+    .app-type {
+        display: inline-block;
+        margin-left: 15px;
+        margin-right: 15px;
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}

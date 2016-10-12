@@ -1,0 +1,44 @@
+.spinner-component {
+  
+  .loading {
+	background-color: white;
+	opacity: 0.7;
+	padding: 0;
+	margin: 0;
+	top: 0;
+	left: 200px;
+	position: fixed;
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+
+		img {
+		  position: fixed;
+		  top: 50%;
+		  left: 50%;
+		}
+		
+		// &.ng-hide-add, &.ng-hide-remove{
+		//   -webkit-transition: 0.5s linear opacity;
+		// }
+		
+		// &.ng-hide {
+		//   opacity: 0;
+		// }
+  }
+  .spinner-shown {
+
+      -webkit-transition: 0.1s linear;
+      /*to only change opacity*/
+      /*-webkit-transition: opacity 1s linear*/
+      -moz-transition: 0.1s linear;
+      -o-transition: 0.1s linear;
+      transition: 0.1s linear;
+      opacity: 1;
+   }
+
+	.hide-spinner {
+    opacity: 0 !important;
+    // display: none !important;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="has-many-string-editor">
+    <div class="title">{{vm.associationTitle}}</div>
+	<button ng-click="vm.add()" class="btn bg-darkblue add-button pull-right"><i class="fa fa-plus-circle"></i></button>
+    <table class="table table-striped">
+        <tbody>
+            <tr ng-repeat="row in vm.rows">
+                <td>
+                    <edit-title title="row" savetitle="vm.edit" index="$index"></edit-title>
+                </td>
+                <td>
+                    <span class="pull-right delete-button" ng-click="vm.delete($index)">
+                        <img src="/images/delete-button.svg" alt="">
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

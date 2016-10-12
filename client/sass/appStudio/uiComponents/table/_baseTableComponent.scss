@@ -1,0 +1,40 @@
+.base-table-component {
+  width: 100%;
+
+  //Defines the layout of the table
+  .base-table-container {
+	width: 100%;
+	min-height: 100px; //TODO: dev temp style
+
+	table-layout: fixed;
+	
+	td {
+	  word-wrap: break-word;
+	}
+  }
+
+  .base-headings-container {
+	min-height: 30px;
+
+	background-color: white;
+  }
+
+  .base-body-container {
+	
+	td{
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  word-wrap: normal;
+	}
+
+	.image-container {
+	  width: 100%;
+	  float: left;
+
+	  img {
+		width: 100%;
+	  }
+	}
+  }
+
+}

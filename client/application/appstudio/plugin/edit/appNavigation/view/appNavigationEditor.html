@@ -1,0 +1,69 @@
+<div class="app-navigation-container">
+	<div class="row">
+		<div class="col-md-12">
+			<!--Selector goes here-->
+			<!--Navigation Type Selector-->
+			<div class="navigation-title">Navigation Type</div>
+			<div class="navigation-type-selector-list">
+				<form>
+					<div ng-repeat="navigationTypeModel in vm.navigationTypeModels">
+						<div class="navigation-type-selector">
+							<div class="radio-selector">
+								<input type="radio" ng-model="vm.selectedNavigationType" ng-value="navigationTypeModel" ng-change="vm.setSelectedNavigationType(navigationTypeModel)">
+							</div>
+							<plugin-component model="navigationTypeModel" purpose="vm.purpose.VIEW" options=""></plugin-component>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+    <has-many-editor 
+        model="vm.model"
+        association-name="vm.sectionName"
+        options="vm.options"
+        save-event="" 
+        empty-state="" 
+        list-name="vm.name" 
+    ></has-many-editor>
+    <br/>
+    <div class="navigation-title">Secondary Menu</div>
+    <plugin-component
+				model="vm.model.getSecondaryMenu()"
+				purpose="vm.purpose.EDIT"
+                options="vm.options"
+                ng-if="vm.dataReady">
+    </plugin-component>
+	<!--<div class="row">
+		<div class="col-md-12">
+
+			<div class="navigation-title">Sections</div>
+			<div class="section-list">
+				<div class="section-list-row" ng-repeat="section in vm.sections" ng-mouseleave="showAction=false">
+					
+					<div class="section-name" ng-mouseenter="showAction=true" >{{section.getFieldValue('name')}}</div>
+					
+					<div class="order-buttons" ng-show="!showAction">
+						<i class="fa fa-arrow-down" ng-class="{'disabled': $last}" ng-click="$last || vm.reorderSectionUp($index)"></i>
+						<i class="fa fa-arrow-up" ng-class="{'disabled': $first}" ng-click="$first || vm.reorderSectionDown($index)"></i>
+					</div>
+					
+                    <span ng-show="showAction" class="animate-show pull-left">
+						<button class="btn btn-icon" ng-click="vm.editSection($index, section)">
+							<img src="/images/edit-button.svg" class="center-button">
+						</button>
+						<button class="btn btn-icon" ng-click="vm.deleteSection($index, section)">
+							<img src="/images/delete-button.svg" class="center-button">
+						</button>
+                    </span>
+				</div>
+				<div class="add-section" ng-click="vm.addSection()"><i class="fa fa-plus"></i> Add Section</div>
+			</div>
+
+		</div>
+	</div>-->
+	<!--Custom save button - functionality passed from UIConfigController-->
+	<div class="save-button--bar">
+		<button class="btn btn-main bg-darkblue" ng-click="vm.save()">SAVE</button>
+	</div>
+</div>

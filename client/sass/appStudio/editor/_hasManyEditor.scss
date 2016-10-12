@@ -1,0 +1,63 @@
+.has-many-component {
+
+  .left-panel {
+	float: left;
+  }
+
+  .center-panel {
+	float: left;
+  }
+  .empty-state {
+    padding-top: 100px;    
+  }
+  
+  .right-panel {
+	float: right;
+  }
+
+  .item-title {
+	margin-top: 30px;
+	text-transform: uppercase;
+	@include  Gotham-Bold-Font(14px, $theme_darkblue);
+  }
+
+  .item-list {
+	margin-top: 25px;
+	list-style-type: none;
+	padding: 0;
+	
+	li{
+	  cursor: pointer;
+	  @include  Gotham-Book-Font(18px, $theme_darkblue);
+	}
+
+	li.active {
+	  @include  Gotham-Book-Font(18px, $theme_coralpink);
+	}
+
+	li:nth-child(n+2) {
+	  margin-top: 15px;
+	}
+
+  }
+  
+  .has-many-editor-actions{
+	display: inline-block;
+	float: right;
+
+	.btn {
+	  display: block;
+	}
+
+	.btn:nth-child(n+2) {
+	  margin-top: 20px;
+	}
+  }
+
+}
+
+.create-has-many-modal {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}

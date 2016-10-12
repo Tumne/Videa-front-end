@@ -1,0 +1,70 @@
+<div>
+ 	<div class="header">PROPERTIES</div>
+	<div class="property-tabs" ng-if="!vm.isScreen">
+		<ul >
+        <li ng-if="vm.generalTab.show" 
+            ng-class="{active: vm.generalTab.isActive}" 
+            ng-click="vm.showGeneralTab()"
+            ng-style="vm.calculateTabSize()">
+            <div ng-class="{'active-text': vm.generalTab.isActive}">{{vm.generalTab.title}}</div>
+			<div ng-class="{'active-bar': vm.generalTab.isActive}"></div>        
+        </li>        
+		<li ng-repeat="oneTab in vm.tabs"
+			ng-click="vm.switchTab(oneTab)" 
+			ng-class="{active: vm.showTab(oneTab)}"
+            ng-style="vm.calculateTabSize()">
+			<div ng-class="{'active-text': vm.showTab(oneTab)}">{{oneTab.title}}</div>
+			<div ng-class="{'active-bar': vm.showTab(oneTab)}"></div>
+		</li>
+		</ul>
+		<div class="clearfix"></div>
+	</div>
+	<div class="viewer">
+         <div ng-if="vm.isScreen">
+            <object-editor  object="vm.model" ignore="vm.ignore"></object-editor>
+            <div ng-repeat="hasOneField in vm.model.getHasOneAssociations()"  
+                class="has-one-component">
+                <div class="title">{{vm.model.getAssociationTitle(hasOneField)}}</div>
+                <plugin-component  
+                                model="vm.model[hasOneField._getterName]()" 
+                                purpose="vm.purpose.EDIT"
+                                options="{configId: vm.config, account: vm.account, app:vm.app, brand:vm.brand}">
+                </plugin-component>
+            </div>
+        </div>
+        <div ng-if="(vm.generalTab.show && vm.generalTab.isActive)">
+            <object-editor  object="vm.model" ignore="vm.ignore"></object-editor>
+            <div ng-repeat="hasOneField in vm.model.getHasOneAssociations()"
+                ng-if="vm.tabs.length == 0"  
+                class="has-one-component">
+                <div class="title">{{vm.model.getAssociationTitle(hasOneField)}}</div>
+                <plugin-component  
+                                model="vm.model[hasOneField._getterName]()" 
+                                purpose="vm.purpose.EDIT"
+                                ng-if="vm.ready"
+                                options="{configId: vm.config, account: vm.account, app:vm.app, brand:vm.brand}">
+                </plugin-component>
+            </div>
+            <div class="text-combobox-component" ng-if="vm.hasScreenNavigation">
+                <div class="title">{{vm.screenNavigationField.getTitle()}}</div>
+                <ui-select tagging ng-model="vm.screenNavigationId" theme="bootstrap" title="" on-select="vm.updateComboBoxValue($item, vm.screenNavigationField)">
+                    <ui-select-match placeholder="">{{$select.selected}}</ui-select-match>
+                    <ui-select-choices repeat="oneEnum in vm.names | filter: $select.search">
+                        <div>{{oneEnum}}</div>
+                    </ui-select-choices>
+                </ui-select>
+            </div>  
+        </div>
+        
+		<property-tab-viewer ng-repeat="oneTabView in vm.tabs" 
+							 ng-if="vm.showTab(oneTabView)" 
+							 open-tab="oneTabView"
+							 model="vm.model"
+                             ignore="vm.ignore"
+                             config="vm.config"
+                             account="vm.account"
+                             app="vm.app"
+                             brand="vm.brand">
+		</property-tab-viewer>
+	</div>
+</div>

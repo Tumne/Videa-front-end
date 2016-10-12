@@ -1,0 +1,19 @@
+.list-view {
+    
+    .complex-tab {
+        list-style-type: none;
+        width: 20%;
+        float: left;
+        li {
+            // margin: 0 5px;
+            // display: inline-block;
+        }   
+        li.active {
+            font-weight: bold;
+        } 
+    }
+    .content-editor{
+        width: 80%;
+        float: left;
+    }
+}

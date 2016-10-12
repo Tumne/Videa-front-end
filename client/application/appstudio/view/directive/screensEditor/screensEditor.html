@@ -1,0 +1,75 @@
+<div>
+  <div class="screens-container">
+    <div class="empty-state" ng-if="vm.ready && vm.screens.length == 0">
+        <div ng-if="vm.ready && vm.screens.length == 0">
+            <button class="btn btn-main btn-custom bg-coralpink" ng-click="vm.createBlankScreen()">NEW SCREEN</button>
+            <div>
+                <div class="empty-state-container">
+                    <div class="title">
+                        Welcome to the Screen Editor!
+                    </div>
+                    <div class="description">
+                        This is the screen editor area. Click "New Screen" to get started.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!--     <div class="screens-panel" ng-if="vm.ready && vm.screens.length > 0">
+        <button class="btn btn-main bg-coralpink" ng-click="vm.createBlankScreen()">NEW SCREEN</button>
+        <div class="header">SCREENS:</div>
+        <ul class="list">
+            <li ng-repeat="oneScreen in vm.screens" ng-class="{active: vm.screenActive(oneScreen)}" ng-mouseenter="showAction=true" ng-mouseleave="showAction=false">
+                <span class="pull-left" ng-click="vm.selectScreen($index)">{{oneScreen.getFieldValue('name')}}</span>
+                <span ng-show="showAction" class="animate-show pull-left">
+                   <button class="btn btn-icon">
+                    <img src="/images/edit-button.svg" class="center-button">
+                   </button>
+                   <button class="btn btn-icon" ng-click="vm.deleteScreen(oneScreen)">
+                    <img src="/images/delete-button.svg" class="center-button">
+                   </button>
+                </span>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </div> -->
+
+    <div class="screens-panel" ng-if="vm.ready && vm.screens.length > 0">
+        <button class="btn btn-main bg-coralpink" ng-click="vm.createBlankScreen()">NEW SCREEN</button>
+
+
+        <div class="header">SCREENS:</div>
+
+        <ul class="list" html-sortable="vm.sortable_option" ng-model="vm.screenNames">
+            <li ng-repeat="oneScreen in vm.screenNames" ng-class="{active: vm.screenActive(oneScreen)}" ng-mouseenter="showAction=true" ng-mouseleave="showAction=false" ng-click="vm.selectScreen($index)">
+                <!-- <span class="pull-left" ng-click="vm.selectScreen($index)">{{oneScreen.getFieldValue('name')}}</span> -->
+                 <!-- <i class="fa fa-ellipsis-v"></i> -->
+                 <div class="reorder-image"></div>
+                <!-- <img src="/images/reorder-image.svg"> -->
+                <span class="margin-span-left" >{{oneScreen.value}}</span>
+                <span ng-show="showAction" class="animate-show pull-right">
+                    <button class="btn btn-icon" ng-click="vm.editScreen(oneScreen)">
+                        <img src="/images/edit-button.svg" class="center-button">
+                    </button>
+                    <button class="btn btn-icon" ng-click="vm.deleteScreen(oneScreen)">
+                        <img src="/images/delete-button.svg" class="center-button">
+                    </button>
+                </span>
+                <div class="clearfix"></div>
+            </li>
+        </ul>
+    </div>
+
+    <plugin-component  
+        model="vm.getScreenChosen()"
+        purpose="vm.purpose.EDIT"
+        options="vm.options"
+        ng-if="vm.ready && vm.screens.length > 0">
+    </plugin-component>
+
+
+    <div class="clearfix"></div>
+  </div>
+</div>

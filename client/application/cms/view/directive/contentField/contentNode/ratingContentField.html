@@ -1,0 +1,17 @@
+﻿<div class="form-group">
+    <div class="input-group" >
+        <label for="input{{field.id}}" class="control-label label-space">{{field.title}}</label>
+        <span ng-class="{'text-align-label cf-form-control': showPencil, 'text-align-label cf-not-form-control': !showPencil}" ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+            <li ng-repeat="star in stars" ng-class="{'fa fa-star':star.filled,'fa fa-star-o':!star.filled}"  ng-click="toggle($index)" ui-focus="focusInput"
+                ng-focus="setEscapeToDefault()" ng-escapekeydown="cancelCallback()">
+                <i></i>
+            </li>
+
+        <span class="input-group-btn span-add-pencil" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up btn-add-pencil" type="button"  ng-click="tryToEdit()">
+                <span class="fa fa-pencil">
+                </span>
+            </button>
+        </span>
+    </div>
+</div>

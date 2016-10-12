@@ -1,0 +1,37 @@
+﻿<div ng-if="hasAccount" class="row">
+    <div class="col-md-6">
+        <div class="list-group-item clearfix">
+            <content-library-widget-directive></content-library-widget-directive>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="list-group list-group-lg list-group-sp">
+            <div class="list-group-item clearfix">
+                <app-configuration-widget-directive></app-configuration-widget-directive>
+            </div>
+            <div class="list-group-item clearfix">
+                <content-types-widget-directive></content-types-widget-directive>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-if="!hasAccount" class="container">
+    <br/> <br/>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No account available</h3>
+                </div>
+                <br/>
+                <p>
+                    You are not connected to any account.
+
+                </p>
+                <br/>
+            </div>
+        </div>
+    </div>
+
+</div>

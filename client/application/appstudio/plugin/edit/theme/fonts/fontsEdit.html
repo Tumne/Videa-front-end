@@ -1,0 +1,16 @@
+<div>
+  <div class="fonts">
+    <div class="header">Fonts</div>
+    <div class="font-card" ng-repeat="hasOneField in vm.hasOneAssociations">
+      <div class="title-frame">
+        <div class="title">{{vm.getHasOneFieldName(hasOneField)}}</div>
+        <img src="/images/help-button.svg" uib-tooltip="{{hasOneField.getHelp()}}">
+      </div>
+      <plugin-component ng-if="vm.ready"
+        model="vm.retrieveHasOneModel(hasOneField._getterName)" 
+        purpose="vm.purpose.EDIT" 
+        options="vm.options">
+      </plugin-component>
+    </div>
+  </div>
+</div>

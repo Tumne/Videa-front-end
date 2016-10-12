@@ -1,0 +1,33 @@
+﻿<div class="form-group" ng-show="showForm">
+    
+    <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+    <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 span-no-padding col-align-left control-label">{{field.title}}</label>
+
+    <div class="input-group col-md-12">
+        <textarea ng-show="edit != 'edit'" class="form-control" placeholder="{{field.title}}" name="{{field.id}}" ui-focus="focusInput" type="text" ng-model="value"
+                  ng-blur="saveCallback()" ng-focus="setEscapeToDefault()" ng-escapekeydown="cancelCallback()" ></textarea>
+        <textarea ng-show="edit == 'edit'" class="form-control" placeholder="{{field.title}}" name="{{field.id}}" ui-focus="focusInput" type="text" ng-model="value" ></textarea>
+
+        <span class="input-group-btn">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+
+</div>
+
+<div class="form-group" ng-show="!showForm" ng-click="tryToEdit()">
+    
+    <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+    <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 span-no-padding col-align-left control-label">{{field.title}}</label>
+
+    <div class="input-group">
+        <div ng-class="{'col-md-12' : expanded =='false', 'col-md-12' : expanded=='true'}" ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+            <p class="form-control-static" ng-show="edit == 'view' || (edit == 'quickedit' && value)">{{value}}</p>
+            <p class="form-control-static text-muted" ng-show="edit == 'quickedit' && !value">click to edit {{field.title}}</p>
+        </div>
+        <span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button" ng-click="showForm = true"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+
+</div>

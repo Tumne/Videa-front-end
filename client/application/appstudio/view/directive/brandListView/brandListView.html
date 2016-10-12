@@ -1,0 +1,39 @@
+<div class="spacer80"></div>
+
+<div class="col-md-7 pull-left brand-view" ng-mouseleave="showButtonsFlag=false">
+	<img ng-src="{{vm.url}}" ng-if="vm.hasurl" class="brand-image"/>
+	<div ng-mouseenter="showButtonsFlag=true" class="brand-title">
+		<div class="pull-left header">
+			<edit-title title="vm.editTitle" savetitle="vm.saveTitle"></edit-title>
+		</div>
+		<div id="brandIconBtns" class="pull-left" ng-show="showButtonsFlag">
+			<button id="editIconBtn" class="btn btn-icon stagger-animation"
+					ng-click="vm.updatebuttons[0].callback(vm.model)"><img
+					src="/images/edit-button.svg" class="center-button"></button>
+			<button id="deleteIconBtn" class="btn btn-icon stagger-animation"
+					ng-click="vm.updatebuttons[1].callback(vm.model)" ng-if="!vm.isActiveConfig"><img
+					src="/images/delete-button.svg" class="center-button"></button>
+		</div>
+	</div>
+</div>
+
+<!--<div class="col-md-7 brand-view" ng-mouseleave="showButtonsFlag=false">-->
+
+<!--</div>-->
+<div class="col-md-5 action-buttons">
+	<div class="pull-right">
+		<!--<button class="btn ml-half" ng-repeat="button in vm.buttons" ng-click="button.callback(vm.model)">-->
+		<!--<span dynamichtml="button.text"></span>-->
+		<!--</button>-->
+		<button id="newGalleryBtn" class="btn btn-secondary bg-greyblue" ng-click="vm.buttons[0].callback(vm.model)">
+			GALLERY <i class="fa fa-chevron-right"></i>
+		</button>
+		<button id="newAppBtn" class="btn btn-secondary bg-darkmint" ng-click="vm.buttons[1].callback(vm.model)">
+			NEW APP <i class="fa fa-plus"></i>
+		</button>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div class="col-md-12 app-list">
+	<ng-transclude></ng-transclude>
+</div>

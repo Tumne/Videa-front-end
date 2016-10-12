@@ -1,0 +1,28 @@
+<div ng-if="vm.ready" class="app-configuration-header row">
+  <div class="col-md-12">
+    <div class="pull-left config-editor-breadcrumb">
+      <div class="pull-left config-editor-go-back btn-go-back" ng-click="vm.goBack()">
+        <img src="/images/back-button.svg">
+      </div>
+      <div class="pull-left config-editor-device">
+        <plugin-component    model="vm.appType" 
+                   purpose="vm.purpose.PREVIEW"
+                   options="{selectable: false}">
+        </plugin-component>
+      </div>
+      <div class="pull-left" ng-mouseenter="showButtonsFlag=true" ng-mouseleave="showButtonsFlag=false" ng-init="showButtonsFlag=false">
+        <div class="pull-left breadcrumb-title">
+          <edit-title title="vm.appTitle" savetitle="vm.saveTitle"></edit-title>
+        </div>
+        <div class="pull-left pl-1" ng-show="showButtonsFlag">
+          <button class="btn btn-icon"><img src="/images/edit-button.svg" class="center-button"></button>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="spacer80"></div>
+<div class="app-configuration-body">
+  <app-configuration-editor object="vm.appModel.getConfiguration()" ng-if="vm.ready" ignore="vm.ignore" options="vm.options" save-event="appConfig-save"></app-configuration-editor>
+</div>

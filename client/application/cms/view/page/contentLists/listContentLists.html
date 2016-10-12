@@ -1,0 +1,12 @@
+﻿<videa-content-header>
+    <button class="btn btn-main bg-coralpink " role="button" ng-click="openAddContentListModal()">
+        Create Content List
+        <i class="fa fa-plus"></i>
+    </button>
+</videa-content-header>
+<videa-content>
+    <videa-content-list loadcontents="populateContentListList()" contentlist="data" query="query" deletemodal="deleteContentListModal(msg)"   expanded="quickEditExpanded" editcontent="quickEditContentList" properties="contentListProperties" sort ="sort" sort-handler="sortContentLists()" asc="asc" total-items="totalItems" current-page="currentPage" items-per-page="itemsPerPage" page-change-handler="pageChanged()" hide-drop-menu="false" loading="loadingContentList" get-content="getContentList(obj)">
+        <div ng-show="quickEditFormIsLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i>loading...</div>
+        <content-list-directive content ="quickEditContentList" expanded="{{quickEditExpanded}}" load-content-lists="populateContentListList()" content-types="contentTypes"></content-list-directive>
+    </videa-content-list>
+</videa-content>

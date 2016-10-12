@@ -1,0 +1,36 @@
+<div dw-loading="uploading" dw-loading-options="{active: false, text: 'Uploading'}" class="upload-modal">
+    <form name="addSection">
+        <div class="row">
+            <div class="section-modal-editor">
+                <complex-model-editor  object="vm.customModalOptions.sectionModel" 
+                                       ignore="vm.customModalOptions.ignore"
+                                       options="vm.options"></complex-model-editor>
+                <!--<div object-editor object="vm.customModalOptions.sectionModel"
+                     ignore="vm.customModalOptions.ignore"></div>
+
+                <div>
+                    <div class="title">Screen</div>
+                    <ui-select tagging ng-model="vm.selectedScreen"
+                               on-select="vm.updateComboBoxValue($item)">
+                        <ui-select-match placeholder="">{{$select.selected.getFieldValue('name')}}</ui-select-match>
+                        <ui-select-choices
+                            repeat="screen in vm.customModalOptions.screenModels">
+                            <div>{{screen.getFieldValue('name')}}</div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+
+            </div>
+            <div ng-if="vm.customModalOptions.modalType == 'new'" class="col-md-12">
+                <button type="button" class="btn btn-main bg-darkblue" ng-click="vm.submitModal()"
+                        ng-disabled="uploadNewGalleryAsset.$invalid">ADD
+                </button>
+            </div>-->
+			<!--TODO: Fix this-->
+            <div ng-if="vm.customModalOptions.modalType == 'edit'" class="col-md-12">
+                <button type="button" class="btn btn-main bg-darkblue" ng-click="vm.ok()">OK</button>
+                <button type="button" class="btn btn-main bg-darkblue" ng-click="vm.cancel()">CANCEL</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4.4 (395) - http://www.bohemiancoding.com/sketch -->
+    <title>Edit</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Small-Button-Options" sketch:type="MSArtboardGroup" transform="translate(-30.000000, -115.000000)">
+            <g id="Edit" sketch:type="MSLayerGroup" transform="translate(30.000000, 115.000000)">
+                <ellipse id="Oval-18" fill="#1B2B37" sketch:type="MSShapeGroup" cx="15" cy="15" rx="15" ry="15"></ellipse>
+                <g id="Shape-+-Shape" transform="translate(9.000000, 9.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <path d="M10.7404762,0.433333333 C10.4928571,0.185714286 10.152381,0.0619047619 9.82738095,0.0619047619 C9.50238095,0.0619047619 9.16190476,0.185714286 8.91428571,0.433333333 L2.22857143,7.11904762 L5.88095238,10.7714286 L12.5666667,4.08571429 C13.077381,3.575 13.077381,2.7702381 12.5666667,2.25952381 L10.7404762,0.433333333 L10.7404762,0.433333333 Z" id="Shape"></path>
+                    <path d="M4.92142857,11.6380952 L1.36190476,8.07857143 L0.0464285714,12.9535714 L4.92142857,11.6380952 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

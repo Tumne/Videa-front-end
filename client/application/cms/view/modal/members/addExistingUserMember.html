@@ -1,0 +1,36 @@
+﻿<div class="modal-header">
+	<h4 class="modal-title" id="myModalLabel">{{popUpTitle}}</h4>
+</div>
+<div class="modal-body">
+	<div class="alert alert-danger" ng-show="errorMsg">
+		{{errorMsg}}
+	</div>
+	<br/>
+	<form role="form">
+		<fieldset class="col-md-12">
+			<div class="form-group">
+				<label class="label-new-line">Username</label>
+				<input type="text" class="input-sm form-control" ng-model="username" required>
+			</div>
+			<div class="form-group">
+				<label class="label-new-line">Member Roles</label>
+				<div class="text-left">
+					<div ng-repeat="role in defaultMemberRoles">
+						<label >
+							<input
+									type="checkbox"
+									value="{{role}}"
+									ng-checked="selection.indexOf(role) > -1"
+									ng-click="toggleMemberRolesSelection(role)">
+							<span class="text-capitalize">{{role}}</span>
+						</label><br/>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-secondary-auto-width bg-darkmint" ng-click="ok()">Add</button>
+	<button class="btn btn-secondary-auto-width bg-greyblue" ng-click="cancel()">Cancel</button>
+</div>

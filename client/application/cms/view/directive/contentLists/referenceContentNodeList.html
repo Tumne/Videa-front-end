@@ -1,0 +1,44 @@
+﻿
+<div class="form-group" ng-show="showForm">
+	<label ng-hide="expanded" class="col-md-2 control-label">References</label>
+	<label ng-show="expanded" class="col-md-12 col-align-left control-label">References</label>
+	<div>
+		<button class="btn btn-secondary-auto-width bg-greyblue pull-right" ng-click="openNodePickerModal()">Add Content</button>
+	</div>
+	<table class="table table-condensed ">
+		<thead>
+		<tr>
+			<th class="col-md-12">
+				<div class="col-md-2">Image</div>
+				<div ng-class="{'col-md-5': expanded == 'false', 'col-md-3': expanded == 'true'}">Name</div>
+				<div ng-class="{'col-md-4': expanded == 'false', 'col-md-1': expanded == 'true'}">Type</div>
+				<div ng-if="expanded == 'true'" class="col-md-3">Last Modified</div>
+				<div ng-if="expanded == 'true'" class="col-md-2">Workflow</div>
+				<div class="col-md-1"></div>
+			</th>
+		</tr>
+		</thead>
+		<tbody  html-sortable="sortableOptions" ng-model="loadedData">
+		<tr  ng-repeat="contentNode in loadedData" >
+			<td >
+				<div class="col-md-2">
+					<img ng-src="{{getImageUrl(contentNode.tryGetImageField())}}" ng-class="{'img-clip' : expanded == 'true', 'img-thumbnail': expanded == 'false'}"/>
+				</div>
+				<div ng-class="{'col-md-5': expanded == 'false', 'col-md-3': expanded == 'true'}">{{contentNode.designation}}</div>
+				<div ng-class="{'col-md-4': expanded == 'false', 'col-md-1': expanded == 'true'}">{{contentTypes[contentNode.contentTypeId].name}}</div>
+				<div ng-if="expanded == 'true'" class="col-md-3">{{contentNode.modifiedDate | date}}</div>
+				<div ng-if="expanded == 'true'" class="col-md-2">
+					<span class="text-box-grey">{{contentNode.state}}</span>
+				</div>
+				<div class="col-md-1">
+					<button type="button" class="btn btn-default" ng-click="removeContentNodeIndex($index)" ><span class="fa fa-trash"></span></button>
+				</div>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div>
+		<button class="btn btn-secondary-auto-width bg-greyblue pull-right" ng-click="openNodePickerModal()">Add Content</button>
+	</div>
+</div>
+

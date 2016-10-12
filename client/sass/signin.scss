@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@import "appStudio/core/core";
+
+$color_darkGrey: #868686;
+$color_grey: #ebeef2;
+
+.videa-logo {
+  width: 100%;
+  text-align: center;
+}
+
+.outer {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 0;
+}
+
+.middle {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 30%;
+  width: 50%;
+  margin: -15% 0 0 -25%;
+  // display: table-cell;
+  // vertical-align: middle;
+}
+
+.coverimage {
+  z-index: -1;
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../images/signin-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 540px;
+}
+
+.signInPanel {
+  height: auto;
+  border-radius: 25px;
+  padding: 40px 70px;
+  background-color: $color_grey;
+  font-family: "GothamHTF-Book" !important;
+}
+
+.form-buttons {
+  width: 100%;
+  text-align: center;
+  font-family: "GothamHTF-Medium" !important;
+}
+
+.signInLinks a {
+  font-family: "GothamHTF-Medium" !important;
+}
+
+.signInLinks a:hover {
+  text-decoration: underline;
+}
+
+.signInLinks a.forgotPassword {
+  color: $theme_greyblue;
+}
+
+.signInLinks a.createAccount {
+  color: $theme_red;
+}
+
+.footer-menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  //height: 30px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-family: "GothamHTF-Book" !important;
+}
+
+.footer-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.footer-menu li {
+  display: inline;
+  border-left: 1px solid $color_darkGrey;
+}
+
+.footer-menu li.first {
+  display: inline;
+  border-left: none;
+}
+
+.footer-menu li a {
+  display: inline-block;
+  color: $color_darkGrey;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.footer-menu li a:hover {
+  text-decoration: underline;
+}

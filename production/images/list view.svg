@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="210px" height="120px" viewBox="0 0 210 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16044) - http://www.bohemiancoding.com/sketch -->
+    <title>list view</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="component-preview-images" sketch:type="MSArtboardGroup" transform="translate(-30.000000, -639.000000)">
+            <g id="list-view" sketch:type="MSLayerGroup" transform="translate(30.000000, 639.000000)">
+                <path d="M0,8.92215789 L66.3157895,8.92215789 L66.3157895,4.5 L0,4.5 L0,8.92215789 Z" id="Fill-1" fill="#9A9A9A" sketch:type="MSShapeGroup"></path>
+                <path d="M0,43.1842105 L55.2631579,43.1842105 L55.2631579,15.5526316 L0,15.5526316 L0,43.1842105 Z" id="Fill-5-Copy-6" fill="#9A9A9A" sketch:type="MSShapeGroup"></path>
+                <path d="M55.2631579,43.1842105 L210,43.1842105 L210,15.5526316 L55.2631579,15.5526316 L55.2631579,43.1842105 Z" id="Fill-5-Copy-10" fill="#D2D2D2" sketch:type="MSShapeGroup"></path>
+                <path d="M55.2631579,79.4569378 L210,79.4569378 L210,51.8253589 L55.2631579,51.8253589 L55.2631579,79.4569378 Z" id="Fill-5-Copy-11" fill="#D2D2D2" sketch:type="MSShapeGroup"></path>
+                <path d="M55.2631579,115.026316 L210,115.026316 L210,87.3947368 L55.2631579,87.3947368 L55.2631579,115.026316 Z" id="Fill-5-Copy-12" fill="#D2D2D2" sketch:type="MSShapeGroup"></path>
+                <path d="M0,79.4569378 L55.2631579,79.4569378 L55.2631579,51.8253589 L0,51.8253589 L0,79.4569378 Z" id="Fill-5-Copy-8" fill="#9A9A9A" sketch:type="MSShapeGroup"></path>
+                <path d="M0,115.026316 L55.2631579,115.026316 L55.2631579,87.3947368 L0,87.3947368 L0,115.026316 Z" id="Fill-5-Copy-9" fill="#9A9A9A" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.appstudio-width {
+    width: 1024px;
+}
+@import "_appConfig";
+@import "appNavigation";
+@import "_brand";
+@import "_configEditor";
+@import "_mediaGallery";
+@import "_screens";
+@import "_theme";

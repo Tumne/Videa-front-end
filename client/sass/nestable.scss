@@ -1,0 +1,204 @@
+@charset "UTF-8";
+//colors
+$color_cararra_approx: #ebebeb;
+$white: #fff;
+$color_alice_blue_approx: #f2fbff;
+$color_french_gray_approx: #b6bcbf;
+$color_pink_swan_approx: #bbb;
+$mercury: #e5e5e5;
+$black_10: rgba(0,0,0,.1);
+$color_alto_approx: #ddd;
+$color_picton_blue_approx: #2ea8e5;
+$color_celeste_approx: #ccc;
+$color_black_haze_approx: #f7f7f7;
+
+//@extend-elements
+//original selectors
+//.dd-item, .dd-empty, .dd-placeholder
+%extend_1 {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-height: 20px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+//original selectors
+//.dd-placeholder, .dd-empty
+%extend_2 {
+	margin: 5px 0;
+	padding: 0;
+	min-height: 30px;
+	background: $color_alice_blue_approx;
+	border: 1px dashed $color_french_gray_approx;
+	//Instead of the line below you could use @include box-sizing($bs)
+	box-sizing: border-box;
+}
+
+
+.dd {
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	max-width: 600px;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+}
+.dd-list {
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	.dd-list {
+		padding-left: 30px;
+	}
+}
+.dd-item {
+	@extend %extend_1;
+	> {
+		button {
+			display: block;
+			position: relative;
+			cursor: pointer;
+			float: left;
+			width: 25px;
+			height: 30px;
+			margin: 5px 0;
+			padding: 0;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+			border: 0;
+			background: transparent;
+			font-size: 12px;
+			line-height: 1;
+			text-align: center;
+			font-weight: bold;
+			&:before {
+				content: '+';
+				display: block;
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				text-indent: 0;
+			}
+		}
+		button[data-action="collapse"]:before {
+			content: '-';
+		}
+	}
+}
+.dd-empty {
+	@extend %extend_1;
+	@extend %extend_2;
+	border: 1px dashed $color_pink_swan_approx;
+	min-height: 100px;
+	background-color: $mercury;
+	background-size: 60px 60px;
+	background-position: 0 0, 30px 30px;
+}
+.dd-placeholder {
+	@extend %extend_1;
+	@extend %extend_2;
+}
+.dd-handle {
+	display: block;
+	margin: 5px 0;
+	padding: 10px;
+	text-decoration: none;
+	border: 1px solid $color_cararra_approx;
+	background: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+	&:hover {
+		background: $white;
+	}
+}
+.dd-dragel {
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+	> {
+		.dd-item .dd-handle {
+			margin-top: 0;
+		}
+		.dd3-item > .dd3-content {
+			margin: 0;
+		}
+	}
+	.dd-handle {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 2px 4px 6px 0 $black_10;
+	}
+}
+.nestable-lists {
+	display: block;
+	clear: both;
+	padding: 30px 0;
+	width: 100%;
+	border: 0;
+	border-top: 2px solid $color_alto_approx;
+	border-bottom: 2px solid $color_alto_approx;
+}
+@media only screen and(min-width: 700px) {
+	.dd + .dd {
+		margin-left: 2%;
+	}
+}
+.dd3-content {
+	display: block;
+	margin: 5px 0;
+	padding: 10px 10px 10px 50px;
+	text-decoration: none;
+	border: 1px solid $color_cararra_approx;
+	background: $white;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 3px;
+}
+.dd3-handle {
+	position: absolute;
+	margin: 0;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+	width: 40px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 1px solid $color_cararra_approx;
+	background: $white;
+	//Instead of the line below you could use @include border-top-right-radius($radius)
+	border-top-right-radius: 0;
+	//Instead of the line below you could use @include border-bottom-right-radius($radius)
+	border-bottom-right-radius: 0;
+	&:before {
+		content: '≡';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 10px;
+		width: 100%;
+		text-align: center;
+		text-indent: 0;
+		color: $color_celeste_approx;
+		font-size: 20px;
+		font-weight: normal;
+	}
+	&:hover {
+		background: $color_black_haze_approx;
+	}
+}
+.dd-collapsed .dd-list {
+	display: none;
+}
+.dd-hover > .dd-handle {
+	background: $color_picton_blue_approx !important;
+}
+.dd3-item > button {
+	margin-left: 40px;
+}

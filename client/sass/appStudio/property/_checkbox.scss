@@ -1,0 +1,16 @@
+.checkbox-component {
+	height: 40px;
+	.checkbox-wrapper {
+		float: left;
+        margin-right: 10px;
+		input {
+		  	cursor: pointer;
+		}
+	}
+	
+	.description {
+		float: left;
+		width: 90%;
+		@include Gotham-Book-Font(14px, $theme_darkblue);
+	}
+}

@@ -1,0 +1,58 @@
+%videa-button{
+  border-radius: 5px;
+  
+  color: $theme_grey;
+  
+  font-size: 11px;
+  font-family: "GothamHTF-Medium";
+
+  &:hover, &:active, &:visited, &:focus{
+    color: $theme_grey;
+  }
+  
+  &.btn-border{
+	border: 1px solid;
+  }
+}
+
+.btn-main{
+ @extend %videa-button;
+
+  min-height: 40px;
+  width: 180px;
+}
+
+.btn-secondary{
+  @extend %videa-button;
+
+  height:30px;
+  width: 100px;
+}
+
+.btn-secondary-auto-width{
+  @extend %videa-button;
+
+  height:30px;
+}
+
+.btn-tertiary{
+  @extend %videa-button;
+}
+
+.btn-icon{
+  height: 30px;
+  width: 30px !important;
+  border-radius: 50%;
+}
+
+.btn-full-width{
+  width: 100%;
+}
+
+.center-button {
+  margin-left: -1px;
+  margin-top: -1px;
+}
+.btn-go-back{
+  cursor: pointer;
+}

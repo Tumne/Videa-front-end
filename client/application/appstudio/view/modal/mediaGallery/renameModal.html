@@ -1,0 +1,14 @@
+<div dw-loading="uploading" dw-loading-options="{active: false, text: 'Uploading'}">
+    <form name="uploadNewGalleryAsset">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="body-text asset-name">Asset Title</div>
+                <input type="text" class="form-control asset-name-input" id="newBrand-title" aria-describedby="basic-addon1" placeholder="Asset Name" ng-model="vm.modalOptions.form.assetName" required>
+                <span class="red" ng-show="vm.errorMessage.length > 0">{{vm.errorMessage}}</span>
+            </div>
+            <div class="col-md-12">
+                <button id="submitRename" type="button" class="btn btn-main bg-darkblue" ng-click="vm.submitModal()" ng-disabled="uploadNewGalleryAsset.$invalid">RENAME</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (356) - http://www.bohemiancoding.com/sketch -->
+    <title>Copy Button</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Versions" sketch:type="MSArtboardGroup" transform="translate(-1370.000000, -235.000000)">
+            <g id="Copy-Button" sketch:type="MSLayerGroup" transform="translate(1370.000000, 235.000000)">
+                <ellipse id="Oval-18" fill="#6B94B3" sketch:type="MSShapeGroup" cx="15" cy="15" rx="15" ry="15"></ellipse>
+                <path d="M11.1112308,8 L11.1112308,11.1112308 L8,11.1112308 L8,22 L18.8887692,22 L18.8887692,18.8887692 L22,18.8887692 L22,8 L11.1112308,8 Z M12.6668462,9.55561538 L20.4443846,9.55561538 L20.4443846,17.3331538 L18.8887692,17.3331538 L18.8887692,11.1112308 L12.6668462,11.1112308 L12.6668462,9.55561538 Z M9.55561538,12.6668462 L17.3331538,12.6668462 L17.3331538,20.4443846 L9.55561538,20.4443846 L9.55561538,12.6668462 Z" id="Page-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+﻿<strong>Workflow</strong>
+<div class="row" ng-show="action != 'add'">
+    <div ng-class="{'col-md-6 span-no-padding-right workflow' : !expanded, 'col-md-6 span-no-padding-right workflow' : expanded}">
+        <span class="form-control text-box-grey text-workflow">
+            {{state}}
+        </span>
+    </div>
+    <div ng-class="{'col-md-6 span-no-padding-left workflow' : !expanded, 'col-md-6 span-no-padding-left workflow-trigger' : expanded}">
+        <div ng-show="isLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i></div>
+        <div class="input-group-btn btn-group"  ng-show="!isLoading">
+            <div uib-dropdown>
+                <button class="btn btn-inverse   text-workflow button-workflow" uib-dropdown-toggle type="button" id="workflowDropMenu" aria-expanded="true">
+                    {{stateTriggers[0]}}
+                    <span class="caret"></span>
+                </button>
+                <ul uib-dropdown-menu role="menu" aria-labelledby="workflowDropMenu">
+                    <li ng-repeat="trigger in stateTriggers">
+                        <a class="text-workflow" ng-click=" fire(trigger)">{{trigger}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="action == 'add'">
+    <p class="form-control-static text-muted">adding new content for Moderation</p>
+</div>

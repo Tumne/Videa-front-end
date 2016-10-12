@@ -1,0 +1,18 @@
+.text-component, .numberbox-component {
+	margin-bottom: 30px;
+	
+	.title {
+		@include Gotham-Book-Font(14px, $theme_darkblue);
+		line-height: 17px;	
+		margin-bottom: 8px;
+	}
+	
+	input {
+		width: 100%;
+		height: 40px;
+		border: 1px solid $theme_cloudyblue;
+		text-indent: 10px;
+		@include Gotham-Book-Font(12px, $theme_darkblue);
+		line-height: 40px;
+	}
+}

@@ -1,0 +1,59 @@
+.media-gallery-table {
+
+  @include Gotham-Book-Font(14px, $theme_darkblue);
+  line-height: 1.2;
+
+  .last-column {
+	width: 32%;
+  }
+
+  .base-body-container {
+
+	tr {
+	  border-bottom: $theme_cloudyblue solid 1px;
+	}
+
+	td {
+	  padding: 10px 0 10px 0;
+	  
+	  button{
+		margin-right: 20px;
+		text-transform: uppercase;
+	  }
+	}
+
+  }
+
+  .base-headings-container {
+
+	@include Gotham-Bold-Font(14px, $theme_darkblue);
+	text-transform: uppercase;
+
+	tr {
+	  height: 40px;
+
+	  background-color: $heading-grey;
+	}
+  }
+
+  .image-container {
+	
+	width: 120px;
+	height: 120px;
+	
+	//Used to center the image - part 1 of 2
+	position: relative;
+
+	img {
+	  max-width: 120px;
+	  max-height: 120px;
+
+	  //Used to center the image - part 2 of 2
+	  overflow: auto;
+	  margin: auto auto auto 0;
+	  position: absolute;
+	  top: 0; left: 0; bottom: 0; right: 0;
+	}
+  }
+
+}

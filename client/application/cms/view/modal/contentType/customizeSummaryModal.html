@@ -1,0 +1,38 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Customize Summary Tile</h4>
+</div>
+<div class="modal-body">
+    <p>Select a field to display on the summary tile.</p>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered b-light" id="Table1">
+            <thead>
+                <tr>
+                    <th style="width: 20px;">
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" ng-click="toggleAll()"><i></i>
+                        </label>
+                    </th>
+                    <th>Field Name</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="odd gradeX" ng-repeat="field in fields">
+                    <td>
+                        <label class="i-checks m-b-none">
+                            <input type="checkbox" ng-init="initSelected(field, contentType.summaryFieldName)" ng-model="field.selected"><i></i>
+                        </label>
+                    </td>
+
+                    <td>{{field.title}}</td>
+                    <td>{{field.fieldType}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary-auto-width bg-darkmint" ng-click="ok()">Update</button>
+    <button class="btn btn-secondary-auto-width bg-greyblue" ng-click="cancel()">Close</button>
+</div>

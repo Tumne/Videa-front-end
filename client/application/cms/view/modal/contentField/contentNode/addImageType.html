@@ -1,0 +1,22 @@
+﻿<div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Add Image Type</h4>
+
+</div>
+<div class="modal-body">
+    <p>
+        New image type name:
+        <input type="text" class="input-sm form-control" ng-model="imageName" required>
+    </p>
+    <p>
+        Width:
+        <input type="number" class="input-sm form-control" ng-model="imageWidth">
+    </p>
+    <p>
+        Height:
+        <input type="number" class="input-sm form-control" ng-model="imageHeight">
+    </p>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary-auto-width bg-darkmint" ng-click="ok()">Create</button>
+    <button class="btn btn-secondary-auto-width bg-greyblue" ng-click="cancel()">Close</button>
+</div>

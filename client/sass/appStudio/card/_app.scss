@@ -1,0 +1,144 @@
+//Variables
+$app-card-height: 312px;
+$app-card-width: 220px;
+$app-card-header-height: 120px;
+
+$circle-top-height: -30px;
+
+.app-list {
+
+  //Enough space for 6 cards
+  max-width: 1500px;
+
+  .app-card {
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .empty-state {
+      padding-top: 50px;
+  }
+}
+
+.app-card {
+
+  min-width: 220px;
+  max-width: 220px;
+
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 0 0 10px 0;
+
+  border-color: $theme_cloudyblue;
+  border-width: 1px;
+  border-style: solid;
+
+  background-color: #ffffff;
+
+  .app-card-actions {
+    margin-top: 10px;
+  }
+
+  .app-card-header {
+    .cross {
+        position: absolute;
+        right: 5px;
+        cursor: pointer;
+        img {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    & > div:first-child {
+      position: absolute;
+      top: $circle-top-height;
+      left: 0;
+      right: 0;
+    }
+
+    border-radius: 4px 4px 0 0;
+    height: $app-card-header-height;
+    text-align: center;
+    position: relative;
+    @include Videa-Vertical-Gradient(#2c485c, $theme_darkblue);
+
+    .device-circle{
+      margin-top: 10px;
+    }
+
+  }
+
+  .title {
+    @include Gotham-Book-Font(16px, #ffffff);
+    position: absolute;
+    top: 80px + $circle-top-height;
+    left: 0;
+    right: 0;
+  }
+
+  .sub-title{
+    @include Gotham-Bold-Font(12px, $theme_darkblue);
+    margin-top: 10px;
+    line-height: 15px;
+    height: 15px;
+  }
+
+  .device-name {
+    @include Gotham-Book-Font(10px, $theme_greyblue);
+    position: absolute;
+    top: 110px + $circle-top-height;
+    left: 0;
+    right: 0;
+  }
+
+  .info {
+    @include Gotham-Book-Font(12px, $theme_darkblue);
+  }
+  .live-status {
+    @include Gotham-Medium-Font(11px, #ffffff);
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    height: 20px;
+
+    //Span inside of live-status
+    & > span {
+      width: 70px;
+      line-height: 20px;
+      height: 100%;
+      border-radius: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: white;
+      display: inline-block;
+    }
+  }
+
+  .btn-secondary {
+
+  }
+}
+
+.app-card-info {
+  padding: 0 20px 0 20px;
+
+  .app-id-height {
+    height: 17px;
+  }
+}
+
+.app-card-actions {
+
+  .btn {
+    width: 100%;
+    @include Gotham-Medium-Font($button_fontsize, $theme_grey);
+  }
+}
+
+.device-circle {
+  img {;
+    width: 60px;
+    height: 60px;
+  }
+}

@@ -1,0 +1,6 @@
+<div class="sub-title">Devices:</div>
+<div class="info">{{vm.deviceList}}</div>
+<div class="sub-title">Bundle Version:</div>
+<div class="info">{{(vm.scope.model.getFieldValue('name')) || "-"}}</div>
+<div class="sub-title">Last Modified:</div>
+<div class="info">{{(vm.scope.model.getFieldValue('modifiedDate') | date) || "-"}}</div>

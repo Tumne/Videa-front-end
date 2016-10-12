@@ -1,0 +1,20 @@
+﻿
+<div class="row">
+    <div ng-class="{'col-md-6': expanded == 'false', 'col-md-3': expanded == 'true'}">
+        <label for="input{{field.name}}"><strong>{{field.title}}</strong></label>
+    </div>
+    <div ng-class="{'col-md-6': expanded == 'false', 'col-md-3': expanded == 'true'}">
+        {{value}}
+    </div>
+    <div class="col-md-3" ng-show="expanded == 'true'">
+        {{field.size}}
+    </div>
+    <div class="col-md-3" ng-show="expanded == 'true'">
+        <span ng-show="field.possibleValues">
+            <span ng-repeat="fd in field.possibleValues track by $index">
+                {{fd}}<span ng-if="$index != (field.possibleValues.length - 1)">,</span>
+            </span>
+        </span>
+        <span ng-hide="field.possibleValues">n/a</span>
+    </div>
+</div>

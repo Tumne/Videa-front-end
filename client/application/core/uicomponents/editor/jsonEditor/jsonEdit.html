@@ -1,0 +1,21 @@
+<div class="advance-screen-component">
+    <div ui-ace="{
+        useWrapMode : true,
+        showGutter: true,
+        firstLineNumber: 1,
+        onLoad: vm.aceLoaded,
+        onChange: vm.onChange,
+         mode: 'json',
+         theme: 'github'
+    }" ng-model="vm.text"></div>
+     
+    <button class="btn btn-main bg-darkblue pull-right" 
+            ng-click="vm.validate()" 
+            ng-disabled="vm.text.length < 1"  
+            >VALIDATE</button>
+
+    <button class="btn btn-main bg-greyblue pull-right" 
+            ng-click="vm.beautify()" 
+            >BEAUTIFY</button>  
+    <div class="clearfix"></div>
+</div>

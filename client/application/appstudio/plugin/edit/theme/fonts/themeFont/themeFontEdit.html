@@ -1,0 +1,14 @@
+<div>
+  <div class="has-one-component" ng-if="vm.ready">
+    <!--     <div class="previewer" ng-style="{'color':vm.color.value}">
+      Aa
+    </div> -->
+    <plugin-component ng-repeat="hasOneField in vm._scope.model.getHasOneAssociations()" 
+          model="vm._scope.model[hasOneField._getterName]()" 
+          purpose="vm.purpose.EDIT" 
+          options="vm.options"
+          ng-if="vm.ready">
+    </plugin-component>
+    <object-editor object="vm._scope.model" ignore="vm.ignore"></object-editor>
+  </div>
+</div>

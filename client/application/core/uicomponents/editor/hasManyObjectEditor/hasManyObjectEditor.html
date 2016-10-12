@@ -1,0 +1,8 @@
+<div class="has-many-object-editor">
+    <div class="title">{{vm.associationTitle}}</div>
+	<button ng-click="vm.add()" class="btn bg-darkblue add-button pull-right"><i class="fa fa-plus-circle"></i></button>
+	
+	<div ng-if="vm.rows.length > 0">
+		<base-table-component models="vm.rows" custom-class="'has-many-table'" ignored-fields="vm.ignore" actions="vm.actions"></base-table-component>
+	</div>
+</div>

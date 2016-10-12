@@ -1,0 +1,58 @@
+<div class="object-editor">
+	<div ng-repeat="field in vm.fields">
+		<div ng-if="vm.showField(field)">
+			<div ng-switch="field.getType().type">
+				<div class="text-component" ng-if="field.getType().type == 'string' && !vm.object.isEnum(field.getName())">
+                    <div class="title">{{field.getTitle()}}</div>
+                    <input 
+							id="{{field.id}}"
+							type="text"
+							ng-model="field.value"
+							ng-change="vm.object.setFieldValue(field.getName(), field.value)"
+              class="input-object-editor"
+							placeholder="{{field.getTitle()}}"/>
+                </div>
+				<div class="text-combobox-component" ng-if="field.getType().type == 'string' && vm.object.isEnum(field.getName())">
+                    <div class="title">{{field.getTitle()}}</div>
+                    <ui-select tagging ng-model="field.value" theme="bootstrap" title="" on-select="vm.updateComboBoxValue($item, field)">
+                        <ui-select-match placeholder="">{{$select.selected}}</ui-select-match>
+                        <ui-select-choices repeat="oneEnum in vm.object.getEnumField(field.getName()) | filter: $select.search">
+                            <div>{{oneEnum}}</div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+		
+				<div class="checkbox-component" ng-switch-when="boolean">
+                    <div class="checkbox-wrapper">
+						<input type="checkbox"
+							id="{{field.id}}"
+							type="checkbox"
+							ng-model="field.value"
+							ng-change="vm.object.setFieldValue(field.getName(), field.value)"/>
+					</div>
+                    <div class="description">{{field.getTitle()}}</div>
+                </div>		
+		
+				<div class="numberbox-component" ng-switch-when="float">
+                    <div class="title">{{field.getTitle()}}</div>
+                    <input 
+							id="{{field.id}}"
+							type="number"
+							ng-model="field.value"
+							ng-change="vm.object.setFieldValue(field.getName(), field.value)"
+							placeholder="{{field.getTitle()}}"/>
+                </div>
+                
+                <div class="numberbox-component" ng-switch-when="int">
+                    <div class="title">{{field.getTitle()}}</div>
+                    <input 
+							id="{{field.id}}"
+							type="number"
+							ng-model="field.value"
+							ng-change="vm.object.setFieldValue(field.getName(), field.value)"
+							placeholder="{{field.getTitle()}}"/>
+                </div>                		
+			</div>
+		</div>	
+	</div>
+</div>

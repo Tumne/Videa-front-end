@@ -1,0 +1,30 @@
+﻿<div class="row">
+	<div class="container-fluid">
+		<form role="form" class="form-horizontal">
+			<input type="hidden" name="id" ng-model="data.id" />
+			<fieldset>
+				<content-text-attribute-directive label-name="'Username'" value="data['username']" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<content-text-attribute-directive label-name="'Email'" value="data.email" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<content-text-attribute-directive label-name="'First Name'" value="data.firstName" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<content-text-attribute-directive label-name="'Last Name'" value="data.lastName" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<content-text-attribute-directive label-name="'Password'" value="data.password" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<br/>
+				<div class="row padder">
+					<label ng-hide="expanded" class="col-md-2 control-label">Roles</label>
+					<label ng-show="expanded" class="col-md-12 span-no-padding col-align-left control-label">Roles</label>
+
+					<div ng-repeat="role in defaultRoles">
+						<label >
+							<input
+									type="checkbox"
+									value="{{role}}"
+									ng-checked="data.roles.indexOf(role) > -1"
+									ng-click="toggleRolesSelection(role)">
+							<span class="text-capitalize">{{role}}</span>
+						</label><br/>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div class="media-gallery container-fluid">
+
+	<div class="sub-nav-row">
+		<span class="pull-left" ng-click="vm.goBack()">
+			<div class="media-gallery-go-back btn-go-back" ng-click="vm.goBack()">
+				<img src="/images/back-button.svg">
+			</div>
+		</span>
+		<span class="right-section">
+			<button class="btn pull-right btn-main bg-coralpink" ng-click="vm.openUploadNewGalleryAsset()">UPLOAD NEW
+			</button>
+		</span>
+	</div>
+	<div class="spacer80"></div>
+	<div ng-show="vm.dataReady && vm.isEmpty">
+		<div class="landing-page-header">Media Gallery</div>
+		<div class="header landing-page-body">
+			Click "Upload New" to add assets to your gallery. Your apps' assets will come from this gallery.
+		</div>
+	</div>
+
+	<media-gallery-table-component ng-if="vm.dataReady && !vm.isEmpty" models="vm.galleryAssets"
+								   actions="vm.actions"></media-gallery-table-component>
+
+</div>

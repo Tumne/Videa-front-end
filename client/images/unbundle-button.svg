@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.5.1 (25234) - http://www.bohemiancoding.com/sketch -->
+    <title>Unpublish</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Versions-with-bundles-v2" sketch:type="MSArtboardGroup" transform="translate(-1290.000000, -304.000000)">
+            <g id="Unpublish-Button" sketch:type="MSLayerGroup" transform="translate(1290.000000, 304.000000)">
+                <ellipse id="Oval-18-Copy" fill="#D03434" sketch:type="MSShapeGroup" cx="15" cy="15" rx="15" ry="15"></ellipse>
+                <path d="M14.9998739,18.2272563 L11.4356602,13.1398538 L13.2958995,13.1398538 L13.2958995,8.06329338 L16.7040375,8.06329338 L16.7040375,13.1401059 L18.5643398,13.1401059 L14.9998739,18.2272563 Z M19.4645677,16.7482658 L19.4645677,19.8526893 L10.5352205,19.8526893 L10.5352205,16.7482658 L8.45146786,16.7482658 L8.45146786,21.9367066 L21.5485321,21.9367066 L21.5485321,16.7482658 L19.4645677,16.7482658 Z" id="Fill-1" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

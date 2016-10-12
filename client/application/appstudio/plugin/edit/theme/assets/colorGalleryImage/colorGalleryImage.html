@@ -1,0 +1,22 @@
+<div ng-if="ready">
+    <div class="image-wrapper" >
+      <!-- <div class='gallery-image' ng-style="{'background': vm.color}" ></div> -->
+      <div class="gallery-image" ng-if="vm.backgroundImageSelected" ng-style="{'background-image':'url(' + vm.backgroundImage + ')'}" ></div>
+      <div class="gallery-image" ng-if="!vm.backgroundImageSelected" ng-style="{'background-color':vm.backgroundColor}" ></div>
+    </div>
+    <button class="btn btn-secondary bg-greyblue" ng-click="vm.pickImage()">PICK IMAGE</button>
+    <div>or</div>
+    <div class="color-component-card">
+
+    <!--<input colorpicker ng-model="vm.color.value" type="text" class="color-input" placeholder="Input color..." />-->
+    <color-picker       class="color-input"
+                        ng-model="vm.backgroundColor"
+                        ng-click="vm.showBackgroundColor()"
+            color-picker-format="'hex'"
+            color-picker-alpha="true"
+            color-picker-swatch="false"
+            color-picker-swatch-bootstrap="false"
+            color-picker-swatch-only="false"
+            color-picker-case="upper"></color-picker>
+    </div>
+</div>

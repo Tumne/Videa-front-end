@@ -1,0 +1,50 @@
+.font-card {
+  width: 120px;
+  .title-frame{
+    height: 40px;
+    margin-top: 30px;
+    .title {
+      @include Gotham-Book-Font($font_title_fontsize, $theme_darkblue);
+      line-height: 17px;
+      margin-bottom: 22px;
+      text-align: center;
+      float:left;
+      width:80%;
+    }
+    img {
+      height: 17px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+  }
+
+  .previewer {
+    height: 64px;
+    font-size: 60px;
+    color: black;
+    text-align: center;
+    margin-bottom: 24px;
+    text-shadow:
+    -1px -1px 0 $theme_cloudyblue,
+    1px -1px 0 $theme_cloudyblue,
+    -1px 1px 0 $theme_cloudyblue,
+    1px 1px 0 $theme_cloudyblue;
+  }
+
+  .ui-select-container {
+    margin-bottom: 10px;
+    border: 1px solid $theme_cloudyblue;
+    font-family: "GothamHTF-Book" !important;
+    font-size: 12px !important;
+    color: #142029 !important;
+
+    .btn-default {
+      border-color: $theme_cloudyblue !important;
+    }
+
+    .form-control {
+      border-radius: 0px !important;
+    }
+  }
+
+}

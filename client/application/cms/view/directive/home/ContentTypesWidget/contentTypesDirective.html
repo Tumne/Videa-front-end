@@ -1,0 +1,32 @@
+﻿<div class="col-md-12">
+    <div class="pull-left">
+        <div class="pull-left breadcrumb-title">
+            Content Types
+        </div>
+        <br />
+        <small class="text-muted">Your Latest Activity</small>
+    </div>
+</div>
+
+<br /><br /><br />
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered b-light" id="Table1">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Last Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd gradeX ng-scope" ng-repeat="contentType in contentTypes | orderBy: 'Id'">
+
+                <td>{{contentType.name}}</td>
+                <td>{{contentType.modifiedDate | date}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+

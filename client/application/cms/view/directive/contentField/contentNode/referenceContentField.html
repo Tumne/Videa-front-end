@@ -1,0 +1,68 @@
+﻿
+<div class="form-group" ng-show="showForm">
+    <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+    <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 col-align-left control-label">{{field.title}}</label>
+    <div>
+        <button class="btn btn-secondary-auto-width bg-greyblue" ng-click="openNodePickerModal()">Add Content</button>
+    </div>
+    <table class="table table-condensed ">
+        <thead>
+        <tr>
+            <th ng-show="expanded == 'true'" class="col-md-1">Select</th>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}">Image</th>
+            <th ng-class="{'col-md-5': expanded == 'false', 'col-md-2': expanded == 'true'}">Name</th>
+            <th ng-class="{'col-md-5': expanded == 'false', 'col-md-2': expanded == 'true'}">Type</th>
+            <th ng-show="expanded == 'true'" class="col-md-3">Last Modified</th>
+            <th ng-show="expanded == 'true' && field.id != 'cast'" class="col-md-2">Workflow</th>
+			<th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="contentNode in loadedData">
+            <td ng-show="expanded == 'true'">
+                <label class="i-checks m-b-none">
+                    <input type="checkbox" ng-model="contentNode.selected"><i></i>
+                </label>
+            </td>
+            <td><img ng-src="{{getImageUrl(contentNode.tryGetImageField())}}" class="img-thumbnail " ng-class="{'img-clip': expanded =='true' }" /></td>
+            <td>{{contentNode.designation}}</td>
+            <td>{{contentTypes[contentNode.contentTypeId].name}}</td>
+            <td ng-show="expanded == 'true'">{{contentNode.modifiedDate | date}}</td>
+            <td ng-show="expanded == 'true' && field.id != 'cast'"><span class="text-box-grey">{{contentNode.state}}</span></td>
+			<td><button type="button" class="btn btn-default" ng-click="removeReference($index)"><span class="fa fa-trash"></span></button></td>
+        </tr>
+        </tbody>
+    </table>
+    <!--
+    <div class="well well-sm" ng-show="expanded == 'true'">
+        <label class="i-checks m-b-none">
+            <input type="checkbox" ng-checked="" ng-click="toggleAll()"><i></i>
+        </label>
+        Batch Controls
+    </div>-->
+
+</div>
+
+<div class="form-group" ng-show="!showForm" ng-click="tryToEdit()">
+    <div class="input-group col-md-12">
+        <div ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+            <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+            <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 span-no-padding col-align-left control-label">{{field.title}}</label>
+        </div>
+        <span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+    <div class="input-group">
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light">
+                <tbody>
+                <tr ng-repeat="contentNode in loadedData">
+                    <td>{{contentNode.designation}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

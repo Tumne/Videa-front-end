@@ -1,0 +1,28 @@
+﻿<div class="row padder" ng-show="showForm">
+	<label ng-hide="expanded" class="col-md-2 control-label">{{labelName}}</label>
+	<label ng-show="expanded" class="col-md-12 span-no-padding col-align-left control-label">{{labelName}}</label>
+	<div class="input-group col-md-12">
+		<input id="textBoxEdit" ng-show="edit != 'edit'" class="form-control" name="{{labelName}}" autofocus type="text" ng-model="value"
+			   ng-blur="updateValue()" ng-focus="setEscapeToDefault()" ng-escapekeydown="cancelCallback()" />
+		<input ng-show="edit == 'edit'" class="form-control" name="{{labelName}}"  type="text" ng-model="value" ng-blur="updateValue()"/>
+		<span class="input-group-btn">
+			<button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+		</span>
+	</div>
+
+</div>
+
+<div class="row padder" ng-show="!showForm" ng-click="callEdit()">
+	<label ng-hide="expanded" class="col-md-2 control-label">{{labelName}}</label>
+	<label ng-show="expanded" class="col-md-12 span-no-padding col-align-left control-label">{{labelName}}</label>
+
+	<div class="input-group">
+		<div ng-class="{'col-md-12' : expanded =='false', 'col-md-12' : expanded=='true'}" ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+			<span class="form-control-static" ng-show="edit == 'view' || (edit == 'quickedit' && value)">{{value}}</span>
+			<span class="form-control-static text-muted" ng-show="edit == 'view' && !value">click to edit {{labelName}}</span>
+		</div>
+        <span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button" ng-click="showForm = true"><span class="fa fa-pencil"></span></button>
+        </span>
+	</div>
+</div>

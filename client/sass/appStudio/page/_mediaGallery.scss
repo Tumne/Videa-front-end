@@ -1,0 +1,32 @@
+.media-gallery {
+  padding: 0;
+  
+  background-color: inherit;
+
+  .sub-nav-row {
+	// overflow: auto;
+	// margin-bottom: 50px;
+  padding: 30px 0 0 0;
+  background: $theme_grey;
+  height: 80px;
+  position: fixed;
+  width:100%;
+  z-index:10;
+  border-bottom: 1px solid #E1E1E1;
+
+  }
+  
+}
+
+
+.media-gallery-go-back {
+  padding-right: 10px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<form name="editAppForm">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="body-text app-name">App Title</div>
+            <input type="text" class="form-control app-name-input" id="app-title" aria-describedby="basic-addon1" placeholder="App title" ng-model="vm.form.appModel.data.name" required>
+            <span class="red" ng-show="vm.errorMessage.length > 0">{{vm.errorMessage}}</span>
+         </div>
+        <div class="col-md-12 margin-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submit()"  ng-disabled="editAppForm.$invalid">EDIT</button>
+        </div>
+    </div>
+</form>

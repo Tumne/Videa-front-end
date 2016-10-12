@@ -1,0 +1,39 @@
+.bg-grey {
+  background-color: $theme_grey;
+}
+
+.bg-darkblue {
+  background-color: $theme_darkblue;
+}
+
+.bg-greyblue {
+  background-color: $theme_greyblue;
+}
+
+.bg-coralpink {
+  background-color: $theme_coralpink;
+}
+
+.bg-darkmint {
+  background-color: $theme_darkmint;
+}
+
+.bg-orangeyellow {
+  background-color: $theme_orangeyellow;
+}
+
+.bg-red {
+  background-color: $theme_red;
+}
+
+.border-coralpink{
+  border-color: $theme_coralpink_contrast;
+}
+
+@mixin Videa-Vertical-Gradient($color1, $color2){
+  background: $color1; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($color1, $color2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($color1, $color2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($color1, $color2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($color1, $color2); /* Standard syntax */
+}

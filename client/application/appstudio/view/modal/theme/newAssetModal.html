@@ -1,0 +1,26 @@
+<div class="gallery-modal">
+    <div class="row asset-row">
+
+		<div class="col-md-3 asset-column" ng-click="vm.submit()">
+			<div class="image-wrapper">
+				<div class="no-image">
+					<span>No Image</span>
+				</div>
+			</div>
+		</div>
+		
+        <div class="col-md-3 asset-column" ng-repeat="assetModel in vm.modalOptions.galleryAssets" ng-click="vm.submit(assetModel)">
+            <div class="image-wrapper">
+                <asset-image ng-if="assetModel.getFieldValue('id') !== ''" image-url="{{assetModel.getFieldValue('url')}}"></asset-image>
+                <div class="no-image" ng-if=" assetModel.getFieldValue('id') === ''">
+                    <span>No Image</span>
+                </div>
+            </div>
+            <div class="image-info"ng-if="assetModel.getFieldValue('id') !== ''">
+                <div>{{assetModel.getFieldValue('name')}}</div>
+                <div>{{assetModel.getFieldValue('width')}}x{{assetModel.getFieldValue('height')}}</div>
+            </div>
+        </div>
+
+    </div>
+</div>

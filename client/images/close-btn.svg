@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: sketchtool 3.4 (356) - http://www.bohemiancoding.com/sketch -->
+    <title>close btn</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Modal---Set-up-New-Brand" sketch:type="MSArtboardGroup" transform="translate(-957.000000, -405.000000)" fill="#6B94B3" opacity="0.4">
+            <g id="Modal---New-Brand" sketch:type="MSLayerGroup" transform="translate(440.000000, 383.000000)">
+                <g id="close-btn" transform="translate(517.000000, 22.000000)" sketch:type="MSShapeGroup">
+                    <path d="M15.726,2 L10.426,7.301 L5.124,2 L3,4.125 L8.301,9.426 L3,14.727 L5.124,16.851 L10.426,11.55 L15.726,16.851 L17.851,14.727 L12.55,9.426 L17.851,4.125 L15.726,2 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

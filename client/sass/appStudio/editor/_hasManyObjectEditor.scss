@@ -1,0 +1,126 @@
+.has-many-string-editor {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  border-radius: 2px;
+  padding: 10px 10px 1px 10px;
+  margin-bottom: 10px;
+ 
+  @include Gotham-Book-Font(14px, $theme_darkblue);
+
+  .title {
+	margin-left: 5px;
+  }
+
+  .edit-button {
+	margin-right: 10px;
+	cursor: pointer;
+  }
+
+  .delete-button {
+	cursor: pointer;
+  }
+
+  .add-button {
+	color: white;
+	margin-bottom: 10px;
+  }
+}
+
+.has-many-object-editor {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 3px 24px 0px rgba(0, 0, 0, 0.14);
+  border-radius: 2px;
+  padding: 10px 10px 1px 10px;
+  margin-bottom: 10px;
+  min-height: 100px;
+  @include Gotham-Book-Font(14px, $theme_darkblue);
+
+  .title {
+	margin-left: 5px;
+  }
+
+  .edit-button {
+	margin-right: 10px;
+	cursor: pointer;
+  }
+
+  .delete-button {
+	cursor: pointer;
+  }
+
+  .add-button {
+	color: white;
+	margin-bottom: 10px;
+  }
+}
+
+.display-view-component {
+  .title {
+	color: grey;
+	font-size: 10px;
+	margin-left: 0px;
+  }
+
+  .content {
+	margin-bottom: 10px;
+  }
+}
+
+.has-many-table{
+
+	.base-headings-container {
+
+	  background-color: inherit !important;
+
+	  tr {
+		background-color: inherit;
+	  }
+	  
+	  td{
+		padding-bottom: 8px;
+		padding-left: 5px;
+	  }
+	  
+	  td:last-child{
+		display: none;
+	  }
+
+	}
+
+  .base-body-container {
+
+	span {
+	  overflow: auto;
+	  text-overflow: ellipsis;
+	  width: 100%;
+	  display: block;
+	}
+
+	td {
+	  vertical-align: top;
+	  padding-left: 10px;
+	  padding-bottom: 10px;
+	  padding-top: 8px;
+
+	  overflow: visible !important;
+	  word-wrap: normal !important;
+	}
+	
+	td:last-child{
+	  text-align: center;
+	}
+	
+	tr:nth-child(odd) {
+	  background-color: white;
+	}
+
+	tr:last-child {
+	  padding-bottom: 10px;
+	}
+  }
+
+}

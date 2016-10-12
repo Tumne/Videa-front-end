@@ -1,0 +1,35 @@
+<div class="create-screen-modal">
+    <form name="createScreenForm">
+        <div class="screen-create-view row">
+            <div class="form-group col-md-12">
+                <div ng-show="!vm.nextClicked" class="screen-select" ng-class="{'hide-screen': vm.nextClicked}">
+                    <div class="body-text screen-name">What would you like to do?</div>
+                    <div class="screen-option-frame" ng-click="vm.selectScreenOption(0)">
+                        <div class="screen-option" ng-class="{'screen-selected': (vm.screenOption == 0)}"></div>
+                        <div ng-class="{'screen-name-selected': (vm.screenOption == 0)}">BUILD A SCREEN FROM SCRATCH</div>
+                    </div>
+                    <div class="screen-option-frame" ng-click="vm.selectScreenOption(1)">
+                        <div class="screen-option screen-advanced" ng-class="{'screen-selected': (vm.screenOption == 1)}" ></div>
+                        <div ng-class="{'screen-name-selected': (vm.screenOption == 1)}">ADVANCED SCREEN EDITOR</div>
+                    </div>
+                    <div class="screen-option-frame" ng-click="vm.selectScreenOption(2)">
+                        <div class="screen-option" ng-class="{'screen-selected': (vm.screenOption == 2)}"></div>
+                        <div ng-class="{'screen-name-selected': (vm.screenOption == 2)}">BUILD A SEARCH RESULT SCREEN</div>
+                    </div>                    
+                </div>
+                
+                <div ng-show="vm.nextClicked" class="screen-name-frame">
+                    <div class="body-text screen-name screen-hidden" ng-class="{'show-screen': vm.nextClicked}">Add a screen name</div>
+                    <input type="text" class="form-control screen-name-input"  ng-class="{'show-screen': vm.nextClicked}"  id="newScreen-title" aria-describedby="basic-addon1" placeholder="Screen Name" ng-model="vm.form.name" required>
+                    <span class="red" ng-show="vm.errorMessage.length > 0">{{vm.errorMessage}}</span>  
+                </div>
+                
+            </div>
+
+            <div class="col-md-12 margin-center button-row">
+                <!--<button class="btn btn-main bg-coralpink" ng-click="vm.navigate()">BACK</button>-->
+                <button class="btn btn-main bg-darkblue" ng-click="vm.submit()" ng-disabled=" (vm.screenOption == null) || vm.nextClicked && createScreenForm.$invalid">{{vm.nextClicked ? 'CREATE' : 'NEXT'}}</button>
+            </div>
+        </div>
+    </form>
+</div>

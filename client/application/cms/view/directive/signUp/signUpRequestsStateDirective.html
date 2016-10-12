@@ -1,0 +1,15 @@
+﻿<div class="row" >
+        <span class=" form-control text-box-grey text-workflow">
+            {{content.workflowState}}
+        </span>
+    <div>
+        <div ng-show="isLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i></div>
+        <div class="btn-group" dropdown="" ng-show="!isLoading">
+            <br/>
+            <div class="col-sm-12">
+                <button class="btn btn-secondary-auto-width bg-darkmint" ng-click="fire('Approved')">Accept</button>
+                <button class="btn btn-secondary-auto-width bg-red" ng-click="fire('Rejected')" >Reject</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="navigation-type-selector">
+    <div class="navigation-type-wrapper">
+        <div class="navigation-type-info">
+            <div ng-class="{window: true, verticalMenu: vm.type === 'VerticalMenu', drawerMenu: vm.type === 'DrawerMenu', topMenu: vm.type ==='TopMenu'}">
+                <div class="top"></div>
+                <div class="bottom"></div>
+            </div>
+            <div class="info" ng-switch on="vm.type">
+                <div ng-switch-when="VerticalMenu">
+                    <div class="title">Vertical</div>
+                    <div class="description">The navigation will be displayed at the bottom.</div>
+                </div>
+                <div ng-switch-when="DrawerMenu">
+                    <div class="title">Drawer Nav</div>
+                    <div class="description">The navigation drawer will be displayed from the left.</div>
+                </div>
+                <div ng-switch-when="TopMenu">
+                    <div class="title">Top</div>
+                    <div class="description">The navigation will be displayed at the top.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

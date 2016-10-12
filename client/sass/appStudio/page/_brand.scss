@@ -1,0 +1,75 @@
+.landing-page-header {
+  @include Gotham-Bold-Font(22px, $theme_greyblue);
+  padding-top: 150px;
+  margin-bottom:30px;
+  text-align: center;
+}
+
+.landing-page-body {
+  text-align: center;
+  line-height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.spinner-component {
+.loading {
+  background-color: white;
+  opacity: 0.7;
+  padding:0;
+  margin:0;
+  top:0;
+  left:200px;
+  position: fixed;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+    img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    }
+}
+
+}
+
+.brand-view{
+  padding: 0;
+}
+
+.brand-view  > * {
+  vertical-align: bottom;
+  margin-right: 20px;
+  padding: 0;
+
+  .header {
+    margin: 50px 20px 0 0;
+  }
+
+  .btn {
+    margin-right: 7px;
+    margin-top: 40px;
+  }
+}
+
+.brand-image{
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.brand-title {
+  display: inline-block;
+}
+.action-buttons {
+  margin-top: 50px;
+
+  .btn {
+    margin-right: 7px;
+  }
+}
+
+.app-list{
+  padding: 0;
+}
+
+

@@ -1,0 +1,52 @@
+%theme-header {
+  @include Gotham-Book-Font($theme_header_fontsize, $theme_darkblue);
+  line-height: 15px;
+}
+
+.theme-container {
+  .assets {
+
+    margin-bottom: 25px;
+	
+    .asset-card, .color-asset-card {
+      margin-right: 40px;
+      display: table-cell;
+      padding-right: 40px;
+      .title-frame {
+        height:40px;
+        .title-height {
+          float: left;
+          width: 80%;
+        }
+        img {
+          height: 17px;
+          cursor: pointer;
+
+        }
+      }
+
+    }
+
+  }
+
+  .colors {
+    margin-bottom: 25px;
+    padding-top: 30px;
+    .color-card {
+      margin-right: 40px;
+      display:inline-block;
+    }
+  }
+
+  .header {
+    @extend %theme-header;
+  }
+
+  .fonts {
+    margin-bottom: 25px;
+    .font-card {
+      display:inline-block;
+      margin-right: 40px;
+    }
+  }
+}

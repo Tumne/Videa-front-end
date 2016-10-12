@@ -1,0 +1,34 @@
+﻿<div class="col-md-12">
+    <div class="pull-left">
+        <div class="pull-left breadcrumb-title">
+            App Configuration
+        </div>
+        <br />
+        <small class="text-muted">Latest Activity</small>
+    </div>
+</div>
+
+
+
+<br /><br /><br />
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered b-light" id="Table1">
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>Platform</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="odd gradeX ng-scope" ng-repeat="brand in brandList | orderBy: 'Name'">
+
+                <td>{{brand.name}}</td>
+                <td>-</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+

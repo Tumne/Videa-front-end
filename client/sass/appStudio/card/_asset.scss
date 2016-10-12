@@ -1,0 +1,31 @@
+.asset-card {
+  margin-bottom: 10px;
+  text-align: center;
+  width: 120px;
+
+  .image-wrapper {
+    margin-bottom: 10px;
+    width: 120px;
+    height: 120px;
+  }
+  .tooltip-arrow {
+    margin-bottom:0 !important;
+  }
+
+  div:nth-child(1) {
+    @include Gotham-Book-Font(14px, $theme_darkblue);
+    line-height: 17px;
+    margin-bottom: 8px;
+  }
+
+  .btn {
+  }
+}
+
+.secondary-menu {
+  .image-wrapper {
+    margin-bottom: 10px;
+    width: 120px;
+    height: 120px;
+  }    
+}

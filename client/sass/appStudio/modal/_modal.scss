@@ -1,0 +1,124 @@
+$column-height: 170px;
+$column-width: 120px;
+$image-height: 120px;
+$image-width: 120px;
+
+.modal-header {
+  @include Gotham-Light-Font(16px, $theme_grey);
+  background-color: $theme_darkblue;
+}
+
+.modal-title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.modal-close {
+  //padding-top: 8px !important;
+  opacity: 1 !important;
+  &:hover, &.active, &.visited {
+    color: $theme_greyblue;
+  }
+}
+
+.modal-body {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: $theme_grey;
+  height: 100%;
+  //overflow-y: hidden;
+  //overflow-x: hidden;
+}
+
+.modal-footer {
+  background-color: $theme_grey;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+  text-align: center;
+}
+
+.asset-column {
+
+  //img{
+  //  width: $column-width;
+  //  height: $column-height;
+  //  position: absolute;
+  //  left: -45%;
+  //  top: -45%;
+  //  margin-left: $column-width / 2;
+  //  margin-top: $column-height / 2;
+  //}
+}
+
+.gallery-modal {
+
+  overflow-y: scroll;
+  max-height: 360px;
+  min-height: 360px;
+  padding-left: 25px;
+
+  .asset-row {
+    padding: 0;
+    margin: 0;
+  }
+
+  .asset-column {
+    height: $column-height;
+    max-width: $column-width;
+    max-height: $column-height;
+    padding: 0;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+
+  .image-wrapper {
+    height: $image-height;
+    width: $image-width;
+  }
+
+  .image-info {
+
+    margin-top: 15px;
+
+    & > div:first-child {
+      @include Gotham-Book-Font(14px, $theme_darkblue);
+      line-height: 17px;
+    }
+
+    & > div {
+      @include Gotham-Book-Font(12px, $theme_greyblue);
+      line-height: 15px;
+    }
+
+  }
+}
+
+.upload-modal{
+
+  .image-wrapper{
+    margin: 20px 0 0;
+    width: 150px;
+    height: 160px !important;
+    max-width: 170px;
+    max-height: 160px !important;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      height: 160px;
+    }
+  }
+
+  .btn{
+    margin-top: 10px;
+  }
+
+}
+
+.p-y {
+  padding-top: 35px;
+  padding-bottom: 15px;
+}

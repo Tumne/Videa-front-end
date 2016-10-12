@@ -1,0 +1,73 @@
+.bundle-create {
+    text-align: left;
+    .version-list-component {
+        overflow-y: scroll;
+        height: 130px;
+        padding-left: 50px;
+        margin-top: 20px;
+
+        .version-choice {
+            float:left;
+            width: 49%;
+            max-width: 49%;
+        }
+    }
+}
+
+.bundle-checkbox label::before {
+   content: "";
+   display: inline-block;
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   left: 0;
+   margin-left: -20px;
+   border: 1px solid #b2b9b9 ;
+   border-radius: 3px;
+   background-color: #fff;
+   -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+   -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+   transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+
+.control-label-group {
+   text-align: left;
+   font-weight: normal;
+   margin-left: -8px;
+   width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   
+}
+.checkbox-primary input[type="checkbox"]:checked + label::before {
+   background-color: #4bb972 ;
+   border-color: #4bb972 ;
+   color:white;
+}
+
+
+.checkbox-primary input[type="checkbox"]:checked + label::after {
+   color: white;
+}
+
+.bundle-checkbox input[type=checkbox] {
+    margin-left: -18px;
+}
+.bundle-checkbox	     label::before {
+    border-radius: 50%;
+}
+
+.bundle-checkbox label::after {
+   display: inline-block;
+   position: absolute;
+   width: 18px;
+   height: 18px;
+   left: 0;
+   top: 0;
+   margin-left: -20px;
+   padding-left: 5px;
+   padding-top: 3px;
+   font-size: 11px;
+   color: #c7cdcd ;
+}

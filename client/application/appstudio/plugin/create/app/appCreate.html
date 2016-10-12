@@ -1,0 +1,27 @@
+<div>
+<form name="newAppForm">
+    <div class="row">
+        <div class="form-group col-md-12">
+            <div class="body-text app-name">{{vm.title}}</div>
+            <input type="text" 
+                   class="form-control app-name-input" 
+                   id="app-title" 
+                   placeholder="App Title" 
+                   ng-model="vm.fields[vm.nameFieldIndex].value" 
+                   ng-change="vm._scope.model.setFieldValue(vm.fields[vm.nameFieldIndex].getName(), vm.fields[vm.nameFieldIndex].value)"
+                   required/>
+        </div>
+        <input type="radio" ng-model="vm.appType" require class="hide"/>
+        <div class="apptype-container">
+            <plugin-component   ng-repeat="appType in vm.appTypes" 
+                                model="appType"
+                                purpose="vm.purpose.PREVIEW"
+                                options="{setAppType: vm.setAppType, selectable: true}">
+            </plugin-component>
+        </div>
+        <div class="col-md-12 margin-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.create()" ng-disabled="vm.fields[vm.nameFieldIndex].value == undefined">CREATE</button>
+        </div>
+    </div>
+</form>
+</div>

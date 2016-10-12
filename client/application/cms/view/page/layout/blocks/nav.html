@@ -1,0 +1,41 @@
+﻿<!-- list -->
+<ul class="nav animated slideInLeft">
+    <!--<li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span>Navigation</span>
+    </li>-->
+    <li ui-sref-active="" ng-repeat="menuItem in menuItems" style="overflow: hidden">
+        <p ng-if="menuItem.separator" class="nav-divider"></p>
+        <a href="" ng-if="!menuItem.separator && !menuItem.dropItems && menuItem.visible" ng-click="changeMenu(menuItem.url)">
+            <p>
+                <img src="{{menuItem.icon}}" class="thumb-xxxs">
+                <span>{{menuItem.title}}</span>
+            </p>
+        </a>
+        <a href class="auto" ng-if="hasAccount && menuItem.dropItems && menuItem.visible" ng-click="expandMenuItem(menuItem)">
+            <p>    <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                </span>
+
+                <img src="{{menuItem.icon}}" class="thumb-xxxs" >
+                <span class="font-bold">{{menuItem.title}}</span>
+            </p>
+        </a>
+		<div ng-if="menuItem.dropItems && menuItem.visible && menuItem.expanded" style="overflow: hidden">
+			<ul ng-class="{animated: menuItem.expanded, slideInDown: menuItem.expanded}">
+				<li ui-sref-active="active" ng-repeat="dropItem in menuItem.dropItems">
+					<span ng-if="dropItem.visible">
+						<a ui-sref="{{dropItem.url}}">
+							<span>{{dropItem.title}}</span>
+						</a>
+					</span>
+				</li>
+			</ul>
+		</div>
+        
+    </li>
+</ul>
+
+
+
+<!-- / list -->

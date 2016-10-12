@@ -1,0 +1,25 @@
+<div class="version-component">
+	<!-- <div class="version-dots"><i class="fa fa-ellipsis-v"></i></div> -->
+	<div class="version-content">
+		<edit-title title="vm.versionName" savetitle="vm.editName"></edit-title>
+		<div class="modified-date">Modified: {{vm.modifiedDate | date : 'MMMM d, yyyy - h:mm a'}}</div>
+	</div>
+	<div class="config-actions">
+		<button class="btn btn-icon publish-version" ng-click="vm.publish()" ng-if="!vm.scope.options.published">
+			<img src="/images/publish-button.svg" class="center-button" uib-tooltip="Publish">
+		</button>
+		<button class="btn btn-icon republish-version" ng-click="vm.publish()" ng-if="vm.scope.options.published">
+			<img src="/images/republish-button.svg" class="center-button" uib-tooltip="Republish">
+		</button>
+		<button class="btn btn-icon edit-version" ng-click="vm.edit(vm.scope.model)">
+			<img src="/images/edit-circle-button.svg" class="center-button" uib-tooltip="Edit">
+		</button>
+		<button class="btn btn-icon duplicate-version" ng-click="vm.duplicate()">
+			<img src="/images/copy-button.svg" class="center-button" uib-tooltip="Duplicate">
+		</button>
+		<button class="btn btn-icon delete-version" ng-click="vm.delete()" ng-if="!vm.scope.options.published">
+			<img src="/images/delete-button.svg" class="center-button" uib-tooltip="Delete">
+		</button>
+	</div>
+	<div class="clearfix"></div>
+</div>

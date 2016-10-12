@@ -1,0 +1,60 @@
+﻿<strong>Availability</strong>
+<div>
+	<table>
+		<thead class="text-availability">
+		<tr>
+			<th>From Date</th>
+			<th>Expire Date</th>
+			<th>On</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+				<div ng-controller="DatepickerDemoCtrl">
+					<p class="input-group">
+						<input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-change="touchAvailabilityToQuickChange(selectedBucket)" ng-model="selectedBucket.fromDate"
+							   is-open="calendar['c1']" datepicker-options="dateOptions"
+							   date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="changeCalendar('c1'); open($event);">temp<i class="fa fa-calendar"></i></button>
+					</span>
+					</p>
+				</div>
+			</td>
+			<td>
+				<div ng-controller="DatepickerDemoCtrl">
+                        <span class="input-group">
+                            <input type="text" class="form-control text-availability-date" ng-change="touchAvailabilityToQuickChange()" uib-datepicker-popup="{{format}}"
+								   ng-model="selectedBucket.expireDate" is-open="calendar['c2']" min-date="selectedBucket.fromDate"
+								   datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="changeCalendar('c2'); open($event);"><i class="fa fa-calendar"></i></button>
+                            </span>
+                        </span>
+				</div>
+			</td>
+			<td>
+				<div class="input-group">
+					<select class="form-control text-availability-date" ng-model="selectedBucket" ng-change="selectedBucketChanged()" ng-options="availData.name for availData in globalBucketList">
+						<!--<option value="" ng-click="toogleAvailabilityModal()">Edit [WIP]</option>-->
+					</select>
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="toogleAvailabilityModal()"><i class="fa fa-pencil"></i></button>
+                            <span ng-show="isAvailabilityTouched && expanded">
+                                <button type="button" class="btn btn-default" ng-click="updateAvailability()"><span class="fa fa-check"></span></button>
+                                <button type="button" class="btn btn-default" ng-click="cancelCallback()"><span class="fa fa-trash"></span></button>
+                            </span>
+                        </span>
+				</div>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+    <span class="col-md-1" ng-show="isAvailabilityTouched && !expanded">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="updateAvailability()"><span class="fa fa-check"></span></button>
+            <button type="button" class="btn btn-default" ng-click="cancelCallback()"><span class="fa fa-trash"></span></button>
+        </span>
+    </span>
+</div>

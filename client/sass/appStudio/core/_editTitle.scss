@@ -1,0 +1,18 @@
+.edit-title span {
+  cursor: pointer;
+}
+
+.edit-title input {
+  display: none;
+}
+
+.edit-title.active span {
+  display: none;
+}
+
+.edit-title.active input {
+  display: inline-block;
+  background: none;
+  border: none;
+  border-bottom: 2px solid $theme_underline_blue;
+}

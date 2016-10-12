@@ -1,0 +1,85 @@
+﻿<strong>Catalogs</strong>
+<div  ng-if="expanded == 'false'">
+    <table class="table table-condensed ">
+        <thead>
+        <tr>
+            <th class="col-md-8"></th>
+            <th clas="col-md-3 pull-right" ></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="availability in availabilities">
+            <td>
+                <div>
+                    <p>
+                        {{bucketsNames[availability.bucketId]}}
+                    </p>
+                    <p ng-if="availability.fromDate">
+                        From Date {{availability.fromDate}}
+                    </p>
+                    <p  ng-if="availability.expireDate">
+                    Expire Date {{availability.expireDate}}
+                    </p>
+                </div>
+            </td>
+            <td>
+                <span >
+                    <button type="button" class="btn btn-default" ng-click="addEditAvailabilityInContentNode($index, true)" ><span class="fa fa-pencil"></span></button>
+                    <button type="button" class="btn btn-default" ng-click="deleteBucketInContentNode($index)" ><span class="fa fa-trash"></span></button>
+                </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div  ng-if="expanded == 'true'">
+    <table class="table table-condensed ">
+        <thead >
+        <tr>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}"></th>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}">From Date</th>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}">Expire Date</th>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}"></th>
+            <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="availability in availabilities">
+            <td>
+                <div>
+                    <span >
+                        {{bucketsNames[availability.bucketId]}}
+                    </span>
+                </div>
+            </td>
+            <td>
+                {{availability.fromDate}}
+            </td>
+            <td>
+                {{availability.expireDate}}
+            </td>
+            <td>
+                <span ng-if="bucketsChanged[$index]" class="input-group-btn">
+
+                    <button type="button" class="btn btn-secondary bg-darkmint" ng-click="updateSpecificAvailabilityCallback($index)" ><i class="fa fa-check"></i></button>
+                </span>
+            </td>
+            <td>
+
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="addEditAvailabilityInContentNode($index, true)" ><span class="fa fa-pencil"></span></button>
+                    <button type="button" class="btn btn-default" ng-click="deleteBucketInContentNode()" ><i class="fa fa-trash"></i></button>
+                </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <span class="col-md-1" ng-show="isAvailabilityTouched && !expanded">
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="updateAvailability()"><span class="fa fa-check"></span></button>
+            <button type="button" class="btn btn-default" ng-click="cancelCallback()"><span class="fa fa-trash"></span></button>
+        </span>
+    </span>
+<button class="btn btn-secondary-auto-width bg-darkmint" ng-click="addEditAvailabilityInContentNode(undefined, false)">Add to Catalog</button>
+

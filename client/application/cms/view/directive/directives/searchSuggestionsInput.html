@@ -1,0 +1,1 @@
+﻿<input type="text" ng-model="query" ng-change="fetchNewSuggestions()" typeahead-focus-first=false uib-typeahead="node for node in listOfSuggestions | limitTo:4" placeholder="{{placeholder}}" typeahead-wait-ms="typeAheadWait" ng-enterkeydown="performSearch()" class="input-sm form-control">

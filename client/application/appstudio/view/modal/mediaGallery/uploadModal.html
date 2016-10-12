@@ -1,0 +1,28 @@
+<div dw-loading="uploading" dw-loading-options="{active: false, text: 'Uploading'}" class="upload-modal">
+    <form name="uploadNewGalleryAsset">
+        <div class="row">
+            <div class="col-md-12">
+                <fieldset>
+                    <div class="margin-center image-wrapper">
+                        <img src="/images/placeholder.png" ng-if="!vm.modalOptions.form.image" class="max-width"/>
+                        <img ngf-src="!vm.modalOptions.form.image[0].$error && vm.modalOptions.form.image[0]"  class="max-width">
+                    </div>
+                    <div class="body-text">.png and .jpeg only</div>
+                    <button class="btn btn-secondary bg-greyblue upload"
+                            ngf-select ng-model="vm.modalOptions.form.image"
+                            ngf-change="onFileSelect($files)"
+                            ngf-multiple="false"
+                            accept="image/*">SELECT</button>
+                </fieldset>
+            </div>
+            <div class="col-md-12">
+                <div class="asset-name body-text">Asset Title</div>
+                <input type="text" class="form-control asset-name-input" id="newBrand-title" aria-describedby="basic-addon1" placeholder="Asset Title" ng-model="vm.modalOptions.form.assetName" required>
+                <span class="red" ng-show="vm.errorMessage.length > 0">{{vm.errorMessage}}</span>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-main bg-darkblue" ng-click="vm.submitModal()" ng-disabled="uploadNewGalleryAsset.$invalid">UPLOAD</button>
+            </div>
+        </div>
+    </form>
+</div>

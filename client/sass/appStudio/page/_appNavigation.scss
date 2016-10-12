@@ -1,0 +1,183 @@
+$list-width: 305px;
+$selector-height: 90px;
+
+.save-button--bar {
+  margin-top: 40px;
+}
+
+.navigation-title {
+  @include Gotham-Light-Font(18px, $theme_darkblue);
+  margin-bottom: 20px;
+}
+
+.navigation-type-selector-list {
+  width: $list-width;
+}
+
+.navigation-type-selector {
+
+  height: $selector-height;
+  margin-bottom: 20px;
+
+  & > div {
+	display: inline-block;
+  }
+
+}
+
+.radio-selector {
+  float: left;
+  width: 30px;
+
+  input[type="radio"] {
+	margin: 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+  }
+}
+
+.navigation-type-wrapper {
+  float: left;
+  width: calc(100% - 30px);
+  height: 100%;
+}
+
+.navigation-type-info {
+  height: 100%;
+
+  & > div {
+	display: inline-block;
+	float: left;
+  }
+
+  .window {
+
+	height: 100%;
+	width: 70px;
+	border-color: $theme_cloudyblue;
+	border-style: solid;
+	border-width: 1px;
+
+	&.verticalMenu {
+
+	  .top {
+		height: 75%;
+		background-color: #ffffff;
+	  }
+	  .bottom {
+		height: 25%;
+		background-color: $theme_greyblue;
+	  }
+
+	}
+
+	&.drawerMenu {
+
+	  & > div {
+		display: inline-block;
+		float: right;
+	  }
+	  .top {
+		height: 100%;
+		width: 70%;
+		background-color: #ffffff;
+	  }
+	  .bottom {
+		height: 100%;
+		width: 30%;
+		background-color: $theme_greyblue;
+	  }
+	}
+
+	&.topMenu {
+
+	  .top {
+		height: 25%;
+		width: 100%;
+		background-color: $theme_greyblue;
+	  }
+	  .bottom {
+		height: 75%;
+		width: 100%;
+		background-color: #ffffff;
+	  }
+	}
+  }
+
+  .info {
+	width: calc(100% - 85px);
+	margin-left: 10px;
+
+	.title {
+	  @include Gotham-Bold-Font(12px, $theme_darkblue);
+	  line-height: 15px;
+	  margin-bottom: 20px;
+	}
+
+	.description {
+
+	}
+  }
+}
+
+.section-list {
+  width: 400px;
+  .add-section {
+	background-color: white;
+	width: 250px;
+	border: 1px dashed #6b94b3;
+	@include Gotham-Bold-Font(11px, $theme_greyblue);
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	cursor: pointer;
+  }
+}
+
+.section-list-row {
+  height: 70px;
+  
+  .section-name {
+	@include Gotham-Book-Font(16px, $theme_greyblue);
+	height: 60px;
+	width: 250px;
+	float: left;
+	cursor: pointer;
+	
+	background-color: white;
+	border-color: #6b94b3;
+	border-style: solid;
+	border-width: 1px;
+	margin-bottom: 10px;
+
+	text-align: center;
+	line-height: 60px;
+  }
+  .animate-show {
+	margin-left: 7px;
+	line-height: 60px;
+  }
+  
+  .order-buttons{
+	display: inline-block;
+	margin-left: 20px;
+	padding-top: 18px;
+	
+	i {
+	  font-size: 25px;
+	  cursor: pointer;
+	  color: $theme_greyblue;
+
+	  &.disabled{
+		color: $theme_cloudyblue;
+		cursor: default;
+	  }
+	}
+	
+  }
+}
+
+
+
+

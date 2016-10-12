@@ -1,0 +1,67 @@
+<div class="create-has-many-modal">
+    <div class="name-view" ng-if="vm.viewType == 'nameView' && vm.ready">
+        <div class="object-editor">
+            <div class="text-component">
+                <br/>
+                <div class="title">Name</div>
+                <input 
+                        type="text"
+                        ng-model="vm.field.value"
+                        ng-change="vm.model.setFieldValue('name', vm.field.value)"
+                        placeholder="{{field.getFieldTitle('name')}}"/>
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submit()" ng-disabled="vm.field.value == ''">CREATE</button>
+        </div>        
+    </div>
+    <div class="form-view" ng-if="vm.viewType == 'formView' && vm.ready">
+        <br/>
+        <plugin-component
+            model="vm.model" 
+            purpose="vm.purpose.CREATE"
+            options="vm.options">
+        </plugin-component>            
+
+        <div class="col-md-12 text-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submit()">CREATE</button>
+        </div>        
+    </div>    
+    <div class="form-view" ng-if="vm.viewType == 'editFormView' && vm.ready">
+        <br/>
+        <plugin-component
+            model="vm.model" 
+            purpose="vm.purpose.EDIT"
+            options="vm.options">
+        </plugin-component>                   
+       
+        <div class="col-md-12 text-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submitEdit()">EDIT</button>
+        </div>        
+    </div>        
+    <div class="select-view" ng-if="vm.viewType == 'selectView' && vm.ready">
+        <br/>
+
+         <div class="object-editor" ng-if="vm.anyOfObjects.length > 0">
+            <div class="text-combobox-component" ng-if="vm.ready">
+                <div class="title">Choose a {{vm.typeTitle}} </div>
+                <ui-select tagging ng-model="vm.modelObject" theme="bootstrap" title="" on-select="vm.updateComboBoxValues($item)">
+                    <ui-select-match placeholder="Select your {{vm.typeTitle}}">{{$select.selected.name}}</ui-select-match>
+                    <ui-select-choices repeat="oneObject in vm.anyOfObjects">
+                        <div ng-bind-html="oneObject.name"></div>
+                    </ui-select-choices>
+                </ui-select>
+                
+            </div>
+         </div>
+         <div class="text-center" ng-if="vm.anyOfObjects.length < 1">
+             <br/>
+             	There are no more items to select.
+             <br/>
+			 <br>
+         </div>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submit()" ng-disabled="vm.model == undefined">CREATE</button>
+        </div>         
+    </div>
+</div>

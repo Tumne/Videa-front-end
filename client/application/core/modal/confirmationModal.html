@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <button type="button" class="close pull-right modal-close" data-dismiss="modal" aria-label="Close" ng-click="vm.modalOptions.close()">
+        <img src="/images/close-btn.svg">
+    </button>
+    <div class="pull-left modal-title">{{vm.modalOptions.headerText}}</div>
+    <div class="clearfix"></div>
+</div>
+<div class="modal-body p-y" ng-class="{'p-0': vm.modalOptions.includeText.length > 0}">
+    <div ng-if="vm.modalOptions.bodyText.length > 0">{{vm.modalOptions.bodyText}}</div>
+</div>
+<div class="modal-footer">
+    <button id="confirmationModalOK" class="btn btn-main bg-red" ng-click="vm.modalOptions.ok();">{{vm.modalOptions.actionButtonText}}</button>
+    <button id="confirmationModalClose" class="btn btn-main bg-darkblue" ng-click="vm.modalOptions.close()">CANCEL</button>
+</div>

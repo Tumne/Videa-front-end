@@ -1,0 +1,299 @@
+.screens-container {
+  min-height: 1000px;
+  width: 100%;
+  // position: absolute;
+  position: relative;
+  
+   .empty-state {
+    // margin-top: 60px;
+    .empty-state-container {
+        margin-top: 70px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        .title {
+        @include Gotham-Bold-Font(22px, $theme_greyblue);
+        margin-bottom: 30px;
+        text-align: center;
+        } 
+        
+        .description {
+        @include Gotham-Light-Font(16px, $theme_darkblue);
+        line-height: 24px;
+        text-align: center;  
+        width: 94%;
+        margin-left: auto;
+        margin-right: auto;    
+        } 
+    }
+  }
+  
+  .btn-custom {
+    margin-top: 0;
+  }
+
+  .screens-panel {
+   
+    position: relative;
+    float: left;
+    margin-top: 0;
+    width: 25%;
+    z-index: 2;
+    margin-right: 5px;
+        
+    .btn {
+      width: 160px;
+    }
+
+    .header {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      @include Gotham-Bold-Font($screens_title_fontsize, $theme_darkblue);
+    }
+
+    .list {
+      padding-left: 0px;
+      @include Gotham-Medium-Font($screens_list_fontsize, $theme_darkblue);
+      list-style: none;
+
+      li {
+
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 0 3px 24px 0 rgba(0,0,0,.14);
+        padding: 10px 15px;
+        margin-bottom: 24px;
+        cursor: move;
+
+        img {
+          height:28px;
+          margin-bottom: 3px;
+        }
+        .reorder-image {
+          width: 28px;
+          height: 28px;
+          margin: 2px;
+          display: block;
+          float:left;
+          cursor: move;
+          background-image: url('/images/reorder-image.svg');
+        }
+        span {
+            cursor: pointer;
+            line-height:33px;
+        }
+
+        .margin-span-left{
+          margin-left:10px
+        }
+        .btn {
+          margin-left: 7px;
+          line-height: 18px;
+          background: none;
+        }
+      }
+      .action-icons {
+        margin-left: 12px;
+        i {
+          margin-right: 12px;
+        } 
+      }
+      .active {
+        color: $theme_coralpink;
+      }
+    }
+  }
+
+  .previewer-viewer {
+    position: relative;
+    float: left;
+    width: 40%;
+    margin-top: 0;
+    
+    
+    .preview {
+      .screen-selected {
+          border: 5px solid $theme_coralpink;
+      }
+      .phone-previewer {
+        width: 270px;
+        height: 475px;
+        padding-top: 15px;        
+        @include mq(big-desktop) {
+             width: 370px;
+             height: 650px;
+        }
+        .device-screen {
+            width: 240px;
+            height: 425px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0px 0px 10px 0px;
+            overflow-y: scroll;
+            background-color: white;
+            @include mq(big-desktop) {
+                width: 340px;
+                height: 590px;
+            }
+        }
+      } 
+      
+      .tablet-previewer {
+        width: 350px;
+        height: 245px;
+        padding-top: 10px;      
+        padding-left: 10px; 
+
+        @include mq(big-desktop) {
+            width: 630px;
+            height: 440px;
+            padding-top: 15px;      
+            padding-left: 15px;            
+        }
+        .device-screen {
+            width: 300px;
+            height: 215px;
+            // margin-left: auto;
+            // margin-right: auto;
+            padding: 0px 0px 10px 0px;
+            overflow-y: scroll;
+            background-color: white;
+            @include mq(big-desktop) {
+                width: 570px;
+                height: 410px;
+            }
+        }
+      }       
+      .tv-previewer {
+        width: 350px;
+        height: 245px;
+        padding-top: 10px;
+                        
+        @include mq(big-desktop) {
+             padding-top: 15px;
+             width: 630px;
+             height: 440px;
+        }                        
+        .device-screen {
+            width: 320px;
+            height: 185px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0px 0px 10px 0px;
+            overflow-y: scroll;
+            background-color: white;
+            @include mq(big-desktop) {
+                width: 600px;
+                height: 380px;
+            }            
+        }
+      }             
+      
+      .phone-previewer, .tablet-previewer, .tv-previewer {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+
+        background-color: black;    
+        
+        
+        .add-component {
+          margin: 10px;
+          border: 1px dashed $theme_darkblue;
+          padding: 10px 5px;
+          text-align: center;
+          @include Gotham-Bold-Font($add_component_fontsize, $theme_greyblue);
+          cursor: pointer;
+        }
+      }
+    }
+    
+    .save-button--bar {
+      margin-top: 32px;
+      text-align: center;
+    }
+  }
+
+  .property-viewer{
+    
+    position: relative;
+    float: right;
+    min-height: 1000px;
+    border-left: 1px solid $theme_cloudyblue;
+    border-right: 1px solid $theme_cloudyblue;
+    border-bottom: 1px solid $theme_cloudyblue;
+    border-top: 1px solid $theme_cloudyblue;
+    margin-bottom: 20px;
+    margin-top: -32px;
+    width: 30%;
+    
+
+    .header {
+      @include Gotham-Bold-Font($screens_title_fontsize, $theme_darkblue);
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      text-align: center;
+
+      border-bottom: 1px solid $theme_cloudyblue;
+    }
+
+    .viewer {
+      overflow-y: scroll;
+      height: 960px;
+      padding-top: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
+    .property-tabs {
+      height: 52px;
+      text-align: center;
+      
+      ul {
+        min-height: 52px;
+        margin-bottom: 0px;
+        padding-left: 0px;
+        list-style-type: none;
+        border-bottom: 1px solid $theme_cloudyblue;
+        
+        li {
+          display: inline-block;
+          line-height: 15px;
+          @include Gotham-Light-Font($property_tab_fontsize, $theme_darkblue);
+          padding-top: 18px;
+          @include mq(desktop-down) {
+            @include Gotham-Light-Font(14px, $theme_darkblue);
+          }
+          cursor: pointer;
+        }
+        
+        .active {
+          @include Gotham-Bold-Font($property_tab_fontsize, $theme_darkblue);
+        }
+        .active-text {
+          padding-bottom: 14px;
+        }
+        .active-bar {
+          border-top: 4px solid $theme_darkblue;
+        }
+      }
+    }
+  }
+}
+
+.phone-previewer, .tablet-previewer, .tv-previewer {
+        .add-component {
+          margin: 10px;
+          border: 1px dashed $theme_darkblue;
+          padding: 10px 5px;
+          @include Gotham-Bold-Font($add_component_fontsize, $theme_greyblue);
+          cursor: pointer;
+          text-align: center;
+        }
+}

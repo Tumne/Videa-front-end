@@ -1,0 +1,15 @@
+<div>
+  <div class="theme-container">
+      <div ng-repeat="hasOneField in vm.hasOneAssociations">
+        <plugin-component ng-if="vm.ready"
+          model="vm.retrieveHasOneModel(hasOneField._getterName)" 
+          purpose="vm.purpose.EDIT" 
+          options="vm.options">
+        </plugin-component>
+      </div>
+	  <!--Custom save button - functionality passed from UIConfigController-->
+	  <div class="save-button--bar">
+		  <button class="btn btn-main bg-darkblue" ng-click="vm.save()">SAVE</button>
+	  </div>
+  </div>
+</div>

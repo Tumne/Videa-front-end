@@ -1,0 +1,28 @@
+<div dw-loading="uploading" dw-loading-options="{active: false, text: 'Uploading'}" class="upload-modal">
+    <form name="editBrandForm">
+        <div class="row">
+            <div class="col-md-12 margin-center">
+                <fieldset>
+                    <div class="image-wrapper">
+                        <img ng-src="/images/placeholder.png" ng-if="!vm.modalOptions.brand.getImage() && !vm.form.image" class="max-width"/>
+                        <img ng-src="{{vm.modalOptions.brand.getImage().url}}" ng-if="vm.modalOptions.brand.getImage() && !vm.form.image" class="max-width"/>
+                        <div class="body-text">Only PNG and JPG files.</div>
+                    </div>
+                    <button class="btn btn-secondary bg-greyblue"
+                            ngf-select ng-model="vm.form.image"
+                            ngf-change="onFileSelect($files)"
+                            ngf-multiple="false"
+                            accept="image/*">UPLOAD</button>
+                </fieldset>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="body-text brand-name">Brand Name</div>
+                    <input type="text" class="form-control brand-name-input" id="brand-title" aria-describedby="basic-addon1" placeholder="Brand title" ng-model="vm.form.brandName" required>
+                    <span class="red" ng-show="vm.errorMessage.length > 0">{{vm.errorMessage}}</span>
+            </div>
+            <div class="col-md-12 margin-center">
+                <button class="btn btn-main bg-darkblue" ng-click="vm.submit()" ng-disabled="newBrandForm.$invalid">EDIT</button>
+            </div>
+        </div>
+    </form>
+</div>

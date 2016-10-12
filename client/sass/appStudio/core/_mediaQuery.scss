@@ -1,0 +1,48 @@
+$custom-tablet-size-start: 481px;
+$custom-tablet-size-end: 768px;
+
+$custom-desktop-size: 1024px;
+$custom-desktop-size-start: $custom-desktop-size + 1px;
+
+$big-desktop-size: 1400px;
+
+$custom-mobile-size: $custom-tablet-size-start - 1px;
+
+//---------- Media Query Mixin ---------
+
+// usage: @include media-query(tablet-and-up) {}
+@mixin mq($media-query){
+
+    // mobile only breakpoint
+    @if $media-query == mobile {
+        @media only screen and (max-width:$custom-mobile-size) { @content; }
+    }
+    
+    // mobile + tablet breakpoint
+    @if $media-query == tablet {
+        @media only screen and (max-width:$custom-tablet-size-end) { @content; }
+    }
+
+    // tablet only breakpoint
+    @if $media-query == tablet-only {
+        @media only screen and (min-width:$custom-tablet-size-start) and (max-width:$custom-tablet-size-end) { @content; }
+    }
+
+    // tablet + desktop breakpoint
+    @if $media-query == tablet-up {
+        @media only screen and (min-width:$custom-tablet-size-end) and (max-width: $custom-desktop-size) { @content; }
+    }
+
+	@if $media-query == desktop-down {
+        @media only screen and (max-width:$custom-desktop-size) { @content; }
+    }
+	
+    // desktop only breakpoint
+    @if $media-query == desktop {
+        @media only screen and (min-width:$custom-desktop-size-start) { @content; }
+    }
+    
+    @if $media-query == big-desktop {
+        @media only screen and (min-width:$big-desktop-size) { @content; }
+    }    
+}

@@ -1,0 +1,12 @@
+﻿<videa-content-header>
+    <button class="btn btn-main bg-coralpink " role="button" ng-click="openAddBucketModal()">
+        Create Bucket
+        <i class="fa fa-plus"></i>
+    </button>
+</videa-content-header>
+<videa-content>
+    <videa-content-list loadcontents="populateBucketList()" contentlist="data" query="query" deletemodal="deleteBucketModal(msg)"   expanded="quickEditExpanded" editcontent="quickEditBucket" properties="bucketProperties" sort ="sort" sort-handler="sortBuckets()" asc="asc" total-items="totalItems" current-page="currentPage" items-per-page="itemsPerPage" page-change-handler="pageChanged()" hide-drop-menu="false" loading="loadingBucket" get-content="getBucket(obj)">
+        <div ng-show="quickEditFormIsLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i>loading...</div>
+        <bucket-directive content ="quickEditBucket" action="quickEditAction" expanded="{{quickEditExpanded}}" load-buckets="populateBucketList()"></bucket-directive>
+    </videa-content-list>
+</videa-content>

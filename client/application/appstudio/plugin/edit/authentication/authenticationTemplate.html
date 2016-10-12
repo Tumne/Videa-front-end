@@ -1,0 +1,22 @@
+<div>
+	<div class="object-editor">
+		<div class="text-combobox-component" ng-if="vm.ready">
+			<div class="title provider-title">Provider</div>
+			<ui-select tagging ng-model="vm.providerForm.provider" theme="bootstrap" title=""
+					   on-select="vm.updateComboBoxValues($item)">
+				<ui-select-match placeholder="Select your Provider">{{$select.selected.name}}</ui-select-match>
+				<ui-select-choices repeat="oneProvider in vm.providerList">
+					<div ng-bind-html="oneProvider.name"></div>
+				</ui-select-choices>
+			</ui-select>
+
+		</div>
+	</div>
+	<div ng-repeat="oneProviderView in vm.providerList"
+		 ng-if="vm.retrieveProvider().getFieldValue('_metadata') == oneProviderView.schemaId">
+		<plugin-component
+				model="vm.retrieveProvider()"
+				purpose="vm.purpose.EDIT">
+		</plugin-component>
+	</div>
+</div>

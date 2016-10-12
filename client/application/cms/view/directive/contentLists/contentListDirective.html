@@ -1,0 +1,35 @@
+﻿<div class="row">
+	<div class="container-fluid">
+		<form role="form" class="form-horizontal">
+			<div class="row padder">
+				<div >
+					<label ng-hide="expanded" class="col-md-2 control-label">Id</label>
+					<label ng-show="expanded" class="col-md-12 span-no-padding col-align-left control-label">Id</label>
+					<div class="input-group">
+						<div ng-class="{'col-md-12' : expanded =='false', 'col-md-12' : expanded=='true'}" >
+							<p class="text-muted">{{data.id}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<fieldset>
+				<content-text-attribute-directive label-name="'Name'" value="data.name" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+				<div class="row padder">
+					<label ng-hide="expanded"  for="contentListQuery" class="col-md-2 control-label">Advanced Query</label>
+					<label ng-show="expanded"  for="contentListQuery" class="col-md-12 span-no-padding col-align-left control-label">Advanced Query</label>
+					<div ng-class="{'col-md-12' : expanded =='false', 'col-md-12' : expanded=='true'}" >
+						<textarea id="contentListQuery" class="form-control" placeholder="query" name="contentListQuery" type="text" ng-model="data.query"  ng-blur="saveCallback()"></textarea>
+					</div>
+				</div>
+				<div class="row padder">
+					<div class="container-fluid">
+						<reference-content-node-directive references="contentReferences" content-types="contentTypes" edit="'edit'" expanded="expanded" onupdate="updateReferences(references)" remove-content-node="removeContentNode(contentNodeId)">
+						</reference-content-node-directive>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+

@@ -1,0 +1,176 @@
+.black {
+  color: #000;
+}
+
+.red {
+  color: red;
+}
+
+.white {
+  color: white;
+}
+
+//borders --------------------------------
+$colours-list: ("black","grey");
+$bg-colours-list: ("green", "orange");
+.border-dotted {
+  border: 1px dotted grey;
+}
+
+@each $current-color in $colours-list {
+  .border-#{$current-color}{
+    border: 1px solid #{$current-color};
+  }
+}
+
+@each $current-color in $bg-colours-list {
+  .bg-#{$current-color}{
+    background-color: #{$current-color};
+  }
+}
+
+.bg-dark-blue {
+  background-color: #1c2b36;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-30 {
+  font-size: 30px;
+}
+
+.font-24{
+  font-size: 24px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+//weights --------------------------------
+//.bold {
+//  font-weight: bold;
+//}
+
+//shapes --------------------------------
+.circle {
+  border-radius: 50%;
+}
+
+.round-corner-5 {
+  border-radius: 10px;
+}
+
+.round-corner-t-1 {
+  border-radius: 8px 8px 0px 0px;
+}
+
+.round-corner-10 {
+  border-radius: 10px;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.full-width {
+  width: 100%;
+}
+
+.max-width {
+  max-width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+@for $i from (0) through 20 {
+  .p-#{$i} {
+    padding: ($i *10px);
+  }
+  .pl-#{$i} {
+    padding-left: ($i *10px);
+  }
+  .pr-#{$i} {
+    padding-right: ($i *10px);
+  }
+  .pt-#{$i} {
+    padding-top: ($i *10px);
+  }
+  .pb-#{$i} {
+    padding-bottom: ($i *10px);
+  }
+  .px-#{$i} {
+    padding-left: ($i *10px);
+    padding-right: ($i *10px);
+  }
+  .py-#{$i} {
+    padding-bottom: ($i *10px);
+    padding-top: ($i *10px);
+  }
+  .m-#{$i} {
+    margin: ($i *10px);
+  }
+  .ml-#{$i} {
+    margin-left: ($i *10px);
+  }
+  .mr-#{$i} {
+    margin-right: ($i *10px);
+  }
+  .mt-#{$i} {
+    margin-top: ($i *10px);
+  }
+  .mb-#{$i} {
+    margin-bottom: ($i *10px);
+  }
+  .mx-#{$i} {
+    margin-left: ($i *10px);
+    margin-right: ($i *10px);
+  }
+  .my-#{$i} {
+    margin-bottom: ($i *10px);
+    margin-top: ($i *10px);
+  }
+
+  .t-#{$i} {
+    top: ($i * 10px);
+  }
+
+  .t-n-#{$i} {
+    top: ($i * -10px);
+  }
+}
+
+.absolute-center {
+  left: 0px;
+  right: 0px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.height-150{
+  height: 150px;
+}
+.mr-half{
+  margin-right: 5px;
+}
+
+.ml-half{
+  margin-left: 5px;
+}
+.mx-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@for $i from (1) through 9 {
+  .w-#{$i} {
+    width: percentage($i/10);
+  }
+}

@@ -1,0 +1,23 @@
+.color-asset-card {
+  margin-bottom: 10px;
+  text-align: center;
+  width: 120px;
+
+  .color-viewer {
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn {
+  }
+
+  .color-input {
+    margin-top: 10px;
+  }
+
+  div:nth-child(4) {
+    @include Gotham-Bold-Font(14px, $theme_darkblue);
+    line-height: 14px;
+    margin-top: 10px;
+  }
+}

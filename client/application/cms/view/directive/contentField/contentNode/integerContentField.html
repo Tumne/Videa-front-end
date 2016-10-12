@@ -1,0 +1,35 @@
+﻿<div class="form-group" ng-show="showForm">
+
+    <div class="input-group">
+        <label for="input{{field.id}}" class="control-label label-space">{{field.title}}</label>
+
+        <input ng-show="edit != 'edit'" class="cf-form-control" placeholder="{{field.title}}" name="{{field.id}}" ui-focus="focusInput" type="text" ng-model="value"
+               ng-blur="saveCallback()"
+               ng-focus="setEscapeToDefault()" ng-enterkeydown="saveCallback()" ng-escapekeydown="cancelCallback()" />
+        <input ng-show="edit == 'edit'" class="cf-form-control" placeholder="{{field.title}}" name="{{field.id}}" ui-focus="focusInput" type="text" ng-model="value" />
+        <span class="input-group-btn span-add-pencil">
+            <button class="btn btn-default bootstrap-touchspin-up btn-add-pencil" type="button"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+
+</div>
+
+<div class="form-group" ng-show="!showForm" ng-click="tryToEdit()">
+
+    <div class="input-group">
+        <label for="input{{field.id}}" class="control-label label-space">{{field.title}}</label>
+        <span ng-class="{'text-align-label cf-form-control': showPencil, 'text-align-label cf-not-form-control': !showPencil}" ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+
+            <span class="" ng-show="edit == 'view' || ((edit == 'quickedit' || edit == 'edit') && value)">{{value}}</span>
+            <span class=" text-muted" ng-show="edit == 'quickedit' && !value"> click to edit {{field.title}}</span>
+        </span>
+        <span class="input-group-btn span-add-pencil" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up btn-add-pencil" type="button"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+</div>
+
+
+
+
+

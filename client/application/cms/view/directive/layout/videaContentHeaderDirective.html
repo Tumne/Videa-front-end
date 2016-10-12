@@ -1,0 +1,27 @@
+﻿<div class="hbox hbox-auto-xs hbox-auto-sm header-padding" ng-init="
+    app.settings.asideFolded = false;
+  ">
+	<!-- main -->
+
+		<!-- main header -->
+		<div class="row gutter">
+			<div class="col-md-6">
+				<div class="pull-left">
+					<div class="pull-left breadcrumb-title">
+						{{page.getTitle()}}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<div  ng-transclude>
+					</div>
+				</div>
+			</div>
+			<div ncy-breadcrumb ng-hide="hideBreadcrumb"></div>
+
+			<!-- / main header -->
+			<div class="bg-white-only" ui-view>
+			</div>
+		<!-- / main -->
+	</div>

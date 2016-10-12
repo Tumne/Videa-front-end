@@ -1,0 +1,110 @@
+﻿<div class="row content-type-row ">
+	<div class="form-group">
+		<div ng-show="showNameForm" class="col-md-12"  ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+            <textarea class="form-control" name="contentTypeName" ui-focus="focusInput" type="text" ng-model="data.name"
+					  ng-blur="lastCTName != data.name ? onVisibleChange() : undefined; showNameForm = false;"></textarea>
+            <span class="input-group-btn">
+            	<button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+        	</span>
+		</div>
+		<div ng-show="!showNameForm" class=" col-md-12"  ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+			<h4 class="input-group form-control-static" >{{data.name}}</h4>
+            <span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+                <button class="btn btn-default bootstrap-touchspin-up" type="button" ng-click="showNameForm = true; lastCTName=data.name;">
+					<span class="fa fa-pencil"></span>
+				</button>
+            </span>
+		</div>
+		<br/><br/><br/>
+		<div class="col-sm-6">
+			<label class="control-label va-webkit-middle">Display in library</label>
+		</div>
+		<div class="col-sm-6">
+			<label class="i-switch m-t-xs m-r">
+				<input type="checkbox" ng-model="data.visible" ng-change="onVisibleChange()">
+				<i></i>
+			</label>
+		</div>
+	</div>
+</div>
+<div class="row content-type-row ">
+	<div class="col-md-12">
+		<div>
+			<strong>Designation Label:</strong> {{data.designationLabel}}
+		</div>
+	</div>
+</div>
+<div class="row content-type-row ">
+	<div class="col-md-12">
+		<div>
+			<button class="btn btn-secondary-auto-width bg-greyblue" ng-click="openCustomizeSummaryModal(data.id)">Customize Summary Tile</button>
+		</div>
+	</div>
+</div>
+
+<div>
+	<!-- Nav tabs -->
+	<uib-tabset>
+		<uib-tab ng-repeat="group in data.fieldGroups">
+			<uib-tab-heading>
+				<a ng-click="selectGroupTab(group)">
+					{{group.name}}
+				</a>
+			</uib-tab-heading>
+			<br />
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn btn-secondary-auto-width bg-greyblue" ng-click="openEditContentFieldModal('add')">+ Add Field</button>
+				</div>
+			</div>
+			<div class="row padder-v">
+				
+				<div id="containersort" class="container-fluid">
+					
+					<form role="form" class="form-horizontal" enctype="multipart/form-data" method="post">
+						<input type="hidden" name="id" ng-model="data.id" />
+						<fieldset>
+							<div class="alert alert-danger" ng-show="errorMsg">
+								{{errorMsg}}
+							</div>
+							<div class="alert alert-success" ng-show="successMsg">
+								{{successMsg}}
+							</div>
+							<div class="row">
+								<div ng-class="{'col-md-6': expanded == 'false', 'col-md-3': expanded == 'true'}">
+									<label for="FieldName" class="control-label">Field Name</label>
+								</div>
+								<div ng-class="{'col-md-6': expanded == 'false', 'col-md-3': expanded == 'true'}">
+									<label for="FieldName" class="control-label">Type</label>
+								</div>
+								<div class="col-md-3" ng-show="expanded == 'true'">
+									<label for="Size" class="control-label">Size</label>
+								</div>
+								<div class="col-md-3" ng-show="expanded == 'true'">
+									<label for="FieldName" class="control-label">Items</label>
+								</div>
+							</div>
+							<hr/>
+							<ul html-sortable="sortableOptions" ng-model="group.fields" class="list-group gutter list-group-lg list-group-sp">
+								<li class="list-group-item " ng-repeat="field in group.fields">
+									<span class="pull-left"><i class="fa fa-sort text-muted fa m-r-sm"></i> </span>
+									<div class="clear" ng-click="openEditContentFieldModal('edit', field)">
+										<content-type-field-directive expanded="expanded" contentid="field.id" field="field" value="field.fieldType" edit="scope.viewMode" onupdate="onUpdateField(contentId, field, value)" preventsave="preventSave" />
+									</div>
+								</li>
+							</ul>
+						</fieldset>
+					</form>
+				</div>
+				<!-- Change this to a button or input when using this as a form -->
+				<div class="form-group" ng-show="action != 'view' && action != 'quickedit' && expanded">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button class="btn btn-secondary-auto-width bg-darkmint" ng-click="saveCallback()" ng-disabled="preventSave">Save</button>
+						<button class="btn btn-secondary-auto-width bg-orangeyellow" ng-click="cancelCallback()" ng-disabled="preventSave">Cancel</button>
+						<br />
+					</div>
+				</div>
+			</div>
+		</uib-tab>
+	</uib-tabset>
+</div>

@@ -1,0 +1,19 @@
+<div>
+  <div class="has-one-component color-component" ng-if="vm.ready">
+    <div class="title">{{vm.title}}</div>
+<!--     <div class="previewer" ng-style="{'color':vm.color.value}">
+      Aa
+    </div> -->
+    <div class="color-component-card">
+    <div colorpicker ng-model="vm.color.value" class="color-circle" ng-style="{'background-color':vm.color.value}" ></div>
+    <color-picker       class="color-input" 
+                        ng-model="vm.color.value"
+            color-picker-format="'hex'"
+            color-picker-alpha="false"
+            color-picker-swatch="false"
+            color-picker-swatch-bootstrap="false"
+            color-picker-swatch-only="false"
+            color-picker-case="upper"></color-picker>
+    </div>
+  </div>  
+</div>

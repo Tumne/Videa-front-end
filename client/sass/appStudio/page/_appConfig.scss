@@ -1,0 +1,86 @@
+.app-config-version-title {
+  @include Gotham-Bold-Font(14px, $theme_darkblue);
+  margin-bottom: 10px;
+}
+
+.app-config-live {
+  @include Gotham-Bold-Font(16px, $theme_darkmint);
+}
+
+.app-config-offline {
+  @include Gotham-Bold-Font(16px, $theme_orangeyellow);
+}
+
+.app-config-modified-date {
+  @include Gotham-BookItalic-Font(12px, $theme_darkblue);
+}
+
+.app-config-container {
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+.app-config-row {
+  //text-align: center;
+  margin: 0 0;
+  //padding: 10px 0;
+  
+  .col-md-2, .col-md-6, .col-md-4 {
+      padding-left: 0px;
+      padding-right: 0px;
+  }
+}
+
+view-app-config {
+  border-top: 1px solid $theme_cloudyblue;
+  padding-left: 100%;
+}
+
+view-app-config:first-child {
+  border-top: none;
+}
+
+.app-config-breadcrumb {
+  padding-top: 20px;
+
+  .app-config-go-back {
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .app-config-device {
+    padding-right: 10px;
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .breadcrumb-title {
+    padding-top: 8px;
+  }
+
+  .btn {
+    margin-top: 8px;
+  }
+}
+
+.config-actions {
+  .btn {
+    margin-left: 18px;
+  }
+}
+
+
+.publish-component-empty {
+    margin-top: 26px;
+    @include Gotham-BookItalic-Font(12px, $theme_darkblue);
+    margin-bottom: 60px;
+}
+
+.publish-component {
+    margin-top: 26px;
+    margin-bottom: 60px;
+}

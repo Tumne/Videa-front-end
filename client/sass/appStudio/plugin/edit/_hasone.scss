@@ -1,0 +1,43 @@
+.has-one-component{
+	margin-bottom: 30px;
+	
+	.title {
+		@include Gotham-Book-Font(14px, $theme_darkblue);		
+		line-height: 17px;	
+		margin-bottom: 8px;		
+	}
+	
+	.slider {
+		.slider-title {
+			@include Gotham-Book-Font(14px, $theme_darkblue);
+			line-height: 17px;
+			margin-bottom: 8px;
+		}
+		
+		rzslider .rz-pointer {
+			background-color: $theme_darkblue;
+			top: -10px;
+			width: 24px;
+			height: 24px;
+		}
+		
+		rzslider .rz-pointer.rz-active:after {
+			background-color: white;
+		}
+		
+		rzslider .rz-bar.rz-selection {
+			background: $theme_greyblue;
+		}
+		
+		rzslider .rz-pointer:after{
+			top: 8px;
+			left: 8px;
+		}
+	}
+}
+
+.color-component {
+    .color-component-card{
+
+    }
+}

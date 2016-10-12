@@ -1,0 +1,32 @@
+<div class="row config-editor-row">
+	<div class="col-md-12">
+		<div class="pull-left config-editor-breadcrumb">
+			<div class="pull-left config-editor-go-back btn-go-back" ng-click="vm.goBack()">
+				<img src="/images/back-button.svg">
+			</div>
+			<div class="pull-left config-editor-device">
+				<plugin-component  	 
+									ng-if="vm.ready"
+									model="vm.appType"
+									purpose="vm.purpose.PREVIEW"
+									options="{selectable: false}">
+				</plugin-component>
+			</div>
+			<div class="pull-left" ng-mouseenter="showButtonsFlag=true" ng-mouseleave="showButtonsFlag=false" ng-init="showButtonsFlag=false">
+				<div class="pull-left breadcrumb-title">
+					<edit-title title="vm.editTitle" savetitle="vm.saveTitle"></edit-title>
+				</div>
+				<div class="pull-left pl-1" ng-show="showButtonsFlag">
+					<button class="btn btn-icon"><img
+							src="/images/edit-button.svg" class="center-button"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br/>
+<div class="spacer80"></div>
+<div class="ui-configuration-editor-row">
+	<ui-configuration-editor ng-if="vm.ready" object="vm.uiConfigModel" ignore="vm.ignore" options="vm.options" save-event="uiConfig-save"></ui-configuration-editor>
+</div>
+<!--Save buttons have been moved inside the plugins. Save functionality is passed into the plugins and called from the plugin controller.-->

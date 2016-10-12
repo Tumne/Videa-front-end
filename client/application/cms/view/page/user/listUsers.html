@@ -1,0 +1,12 @@
+﻿<videa-content-header>
+    <button class="btn btn-main bg-coralpink"  role="button" ng-click="openAddUserModal()">
+        Create User
+        <i class="fa fa-plus"></i>
+    </button>
+</videa-content-header>
+<videa-content>
+    <videa-content-list loadcontents="populateUserList()" contentlist="data" query="query" deletemodal="deleteUserModal(msg)"  expanded="quickEditExpanded" editcontent="quickEditUser" properties="usersProperties" sort ="sort" sort-handler="sortUsers()" asc="asc" total-items="totalItems" current-page="currentPage" items-per-page="itemsPerPage" page-change-handler="pageChanged()" hide-drop-menu="false" loading="loadingUser" get-content="getUser(obj)">
+        <div ng-show="quickEditFormIsLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i>loading...</div>
+        <edit-user-directive content ="quickEditUser" action="quickEditAction" expanded="{{quickEditExpanded}}" load-users="populateUserList()" default-roles="defaultRoles"></edit-user-directive>
+    </videa-content-list>
+</videa-content>

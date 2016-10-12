@@ -1,0 +1,33 @@
+.component-list {
+	.component {
+	width: 100%;
+	
+	padding: 3px 3px 0px 3px;
+	border-radius: 0px 0px 5px 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+	.component-preview {
+		max-width: 100%;
+        width: 100%;
+	}
+	.description-wrapper {
+        text-align: center;
+		.title {
+			text-align: center;
+			@include Gotham-Medium-Font($add_component_fontsize, $theme_white);
+		}
+        .close-component {
+            float: right;
+            color: white;
+            @include Gotham-Bold-Font(15px, $theme_white);
+            cursor: pointer;
+        }
+        .reorder-component {
+            float: left;
+        }
+	}
+	}
+	.active {
+		background-color: #ff676c;
+	}
+}

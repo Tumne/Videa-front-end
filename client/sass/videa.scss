@@ -1,0 +1,115 @@
+//colors
+$color_alto_approx: #dddddd;
+$color_grey: #ebeef2;
+
+.header-padding {
+	padding: 32px 40px 32px 40px;
+}
+
+.table-cols {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+.datepicker {
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+}
+.leftoverlay {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	z-index: 10;
+}
+.rightoverlay {
+	position: absolute;
+	height: 100%;
+	right: 0;
+	z-index: 10;
+}
+.overlay {
+	position: relative;
+	top: 50%;
+}
+.img-clip {
+	width: 30%;
+	height: auto;
+	overflow: hidden;
+}
+.img-clip-sm {
+	width: 5%;
+	height: auto;
+	overflow: hidden;
+}
+.control-label {
+	font-weight: bold;
+}
+.cursorpointer {
+	cursor: pointer;
+}
+.alert-popup {
+	position: fixed;
+	top: 70px;
+	left: 40%;
+	z-index: 1000;
+	display: block;
+}
+.configuration-div {
+	padding: 0 0 0 10px !important;
+}
+.configuration-label {
+	margin-top: 20% !important;
+}
+.configuration-content {
+	vertical-align: top;
+}
+.configuration-content-textarea {
+	width: 450px;
+	height: 250px;
+}
+.configuration-control-button {
+	padding: 10px;
+}
+.configuration-editmode-switch {
+	background-color: $color_alto_approx;
+	padding: 2px 12px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 2px;
+}
+.breadcrumb {
+	margin-bottom: 0;
+	background-color: none;
+}
+.quickedit-header {
+	height: 30px;
+}
+.va-webkit-middle {
+	vertical-align: -webkit-baseline-middle;
+}
+.content-type-row {
+	margin-bottom: 20px;
+}
+.navbar-brand img {
+	max-height: 40px;
+	margin: 20px 10px 0;
+	vertical-align: middle;
+}
+
+.navi {
+	font-family: "GothamHTF-Medium";
+}
+
+.navi li img {
+	margin-right: 15px;
+}
+
+.html5-sortable .moving,.droppable.moving{
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+
+.html5-sortable .over, .droppable.over{
+  border: 3px dashed $color_grey;
+}

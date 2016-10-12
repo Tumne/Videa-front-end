@@ -1,0 +1,34 @@
+<div class="app-config-manager">
+    <div class="version-buttons">
+        <div class="pull-right">
+            <button class="btn btn-main bg-coralpink" ng-disabled="!vm.versions.length > 0" ng-click="vm.openBundleModal()">CREATE A BUNDLE</button>
+            <button class="btn btn-main bg-coralpink" ng-click="vm.openVersionModal()">CREATE A NEW VERSION</button>
+        </div>
+    </div>
+    <div class="empty-state text-center" ng-if="vm.versions.length < 1 && !vm.activeConfig">
+            <br/>
+            Click "Create A New Version" to get started.
+    </div>
+    <div class="spacer140"></div>
+    <div ng-if="vm.versions.length > 0 || vm.publishedUiConfig">
+        <div class="app-config-version-title published-version-title">PUBLISHED VERSION</div>
+        <div class="publish-component-empty" ng-if="!vm.publishReady && !vm.publishedUiConfig">
+           You have not published a version for this app yet. In order for your app configuration to take effect, it must be published.
+        </div>
+        <div class="publish-component" ng-if="vm.publishReady && vm.publishedUiConfig">
+            <plugin-component  
+                model="vm.publishedUiConfig" 
+                purpose="vm.purpose.VIEW" 
+                options="vm.publishedOptions">
+            </plugin-component>
+        </div>
+        <div class="app-config-version-title other-version-title">OTHER VERSIONS</div>
+        <plugin-component  
+                        ng-repeat="oneVersion in vm.versions = (vm.versions | idfilter:vm.activeConfig)" ng-if="vm.ready"
+						model="oneVersion" 
+						purpose="vm.purpose.VIEW" 
+						options="vm.options">
+		</plugin-component>
+    </div>
+</div>
+

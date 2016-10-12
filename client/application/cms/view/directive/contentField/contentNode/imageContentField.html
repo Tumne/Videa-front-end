@@ -1,0 +1,161 @@
+﻿<div class="form-group" ng-show="showForm">
+
+    <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+    <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 span-no-padding col-align-left control-label">{{field.title}}</label>
+
+    <button class="btn btn-secondary-auto-width bg-greyblue" ng-click="openAddImageModal()">+ Add Image</button>
+    <button class="btn btn-secondary-auto-width bg-greyblue" ng-click="openAddImageTypeModal()">Create New Image Type</button>
+
+
+    <table class="table table-condensed " ng-init="curLocalOrder">
+        <thead>
+            <tr>
+                <th ng-show="expanded == 'true'" class="col-md-1">Select</th>
+                <th ng-class="{'col-md-2': expanded == 'false', 'col-md-2': expanded == 'true'}">Image</th>
+                <th ng-class="{'col-md-5': expanded == 'false', 'col-md-2': expanded == 'true'}" ng-click="changeOrder('name'); curLocalOrder='name'">
+                    Name
+                    <span ng-show="expanded == 'true'">
+                        <span ng-show="curLocalOrder != 'name'" class="fa fa-arrows-v"></span>
+                        <span ng-show="curLocalOrder == 'name' && orderAsc" class="fa fa-chevron-up"></span>
+                        <span ng-show="curLocalOrder == 'name' && !orderAsc" class="fa fa-chevron-down"></span>
+                    </span>
+                </th>
+                <th ng-class="{'col-md-5': expanded == 'false', 'col-md-2': expanded == 'true'}" ng-click="changeOrder('type'); curLocalOrder='type'">
+                    Image Type
+                    <span ng-show="expanded == 'true'">
+                        <span ng-show="curLocalOrder != 'type'" class="fa fa-arrows-v"></span>
+                        <span ng-show="curLocalOrder == 'type' && orderAsc" class="fa fa-chevron-up"></span>
+                        <span ng-show="curLocalOrder == 'type' && !orderAsc" class="fa fa-chevron-down"></span>
+                    </span>
+                </th>
+                <th ng-show="expanded == 'true'" class="col-md-2">Size</th>
+                <th ng-show="expanded == 'true'" class="col-md-3" ng-click="changeOrder('lastModified'); curLocalOrder='lastModified'">
+                    Last Modified
+                    <span ng-show="expanded == 'true'">
+                        <span ng-show="curLocalOrder != 'lastModified'" class="fa fa-arrows-v"></span>
+                        <span ng-show="curLocalOrder == 'lastModified' && orderAsc" class="fa fa-chevron-up"></span>
+                        <span ng-show="curLocalOrder == 'lastModified' && !orderAsc" class="fa fa-chevron-down"></span>
+                    </span>
+                </th>
+				<th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="img in value | orderBy: orderByValue">
+				<td ng-show="expanded == 'true'">
+					<label class="i-checks m-b-none">
+						<input type="checkbox" ng-model="img.selected"><i></i>
+					</label>
+				</td>
+                <td><img ng-src="{{getImageUrl(img)}}" class="img-thumbnail " ng-class="{'img-clip': expanded =='true' }" /></td>
+				<td>
+                  
+					<div class="input-group" ng-show="showEditImgName">
+                        <input class="form-control " ng-init="img.newName = img.name" placeholder="{{img.newName}}" name="{{img.newName}}" ui-focus="focusInput" type="text" ng-model="img.newName"
+                               ng-blur="saveNewImageName(img); showEditImgName = false" 
+                               ng-enterkeydown="saveNewImageName(img); showEditImgName = false"
+                               ng-escapekeydown="img.newName = img.name; showEditImgName = false">
+						<span class="input-group-btn"  >
+							<button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+						</span>
+					</div>
+					<div class="input-group" ng-hide="showEditImgName" ng-click="showEditImgName = true">
+						<div ng-class="{'form-control': showPencil}" ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+							<p class="form-control-static">{{img.name}}</p>
+						</div>
+						<span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+							<button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+						</span>
+
+					</div>
+				</td>
+                <td>
+
+                    <div uib-dropdown>
+                        <button uib-dropdown-toggle class="btn btn-inverse text-workflow" type="button" id="imgTypeDropMenu" aria-expanded="true">
+                            {{getImageTypeTitle(img.imageType)}}
+                            <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu role="menu" aria-labelledby="imgTypeDropMenu">
+                            <li ng-repeat="imgType in imgTypes">
+                                <a class="text-workflow" ng-click="changeImgType(img, imgType)">{{imgType.name}}</a>
+                            </li>
+                            <li><a class="text-workflow" ng-click="openAddImageTypeModal()">[Other Image Types]</a></li>
+                        </ul>
+                    </div>
+
+                   
+                </td>
+                <td ng-show="expanded == 'true'">{{img.width}} x {{img.height}}</td>
+                <td ng-show="expanded == 'true'">{{img.lastModified | date}}</td>
+				<td><button type="button" class="btn btn-default" ng-click="removeImage(img)"><span class="fa fa-trash"></span></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+	<div class="well well-sm" ng-show="expanded == 'true'">
+		<label class="i-checks m-b-none">
+			<input type="checkbox" ng-checked="" ng-click="toggleAll()"><i></i>
+		</label>
+		Batch Controls
+	</div>
+
+
+    <!--  <div ng-class="{'col-md-12' : expanded =='false', 'col-md-10' : expanded=='true'}">
+          <div ng-show="!selectPictureMode">
+              <div>
+                  <img ng-src="{{getImageUrl(value, container)}}" class="img-thumbnail img-clip" />
+              </div>
+              <div>
+                  <button class="btn btn-default" ng-click="showSelectPicture()">Change picture</button>
+              </div>
+          </div>
+          <div ng-show="selectPictureMode">
+              <div>
+                  <h4>Select picture</h4>
+              </div>
+              <div>
+                  <asset-manager container="{{container}}" on-click-asset="onSelectAsset" />
+              </div>
+              <div>
+                  <div ng-show="selectPictureError" class="alert alert-danger" role="alert">{{selectPictureError}}</div>
+                  <div>
+                      <img ng-show="selectedAsset" ng-src="{{selectedAsset.Uri}}" class="img-thumbnail img-clip-sm" />
+                  </div>
+                  <button class="btn btn-btn-secondary bg-orangeyellow" ng-click="dismissSelectPicture()">Close</button>
+                  <button class="btn btn-btn-secondary bg-darkmint" ng-click="selectPicture()">Select</button>
+              </div>
+          </div>
+      </div>-->
+</div>
+
+<div class="form-group" ng-show="!showForm" ng-click="tryToEdit()">
+    
+    <div class="input-group col-md-12">
+        <div ng-mouseover="showPencil = true" ng-mouseleave="showPencil = false">
+            <label ng-hide="expanded" for="input{{field.id}}" class="col-md-2 control-label">{{field.title}}</label>
+            <label ng-show="expanded" for="input{{field.id}}" class="col-md-12 span-no-padding col-align-left control-label">{{field.title}}</label>
+        </div>
+        <span class="input-group-btn" ng-show="showPencil" ng-init="showPencil = false">
+            <button class="btn btn-default bootstrap-touchspin-up" type="button"><span class="fa fa-pencil"></span></button>
+        </span>
+    </div>
+
+
+    <table class="table table-condensed ">
+        <thead>
+            <tr>
+                <th class="col-md-2">Image</th>
+				<th class="col-md-5">Filename</th>
+                <th class="col-md-5">Image Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="img in value">
+                <td><img ng-src="{{getImageUrl(img)}}" class="img-thumbnail" /></td>
+				<td>{{img.id}}</td>
+                <td>{{img.ImageType}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

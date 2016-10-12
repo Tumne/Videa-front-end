@@ -1,0 +1,16 @@
+﻿<videa-content-header>
+    <button class="btn btn-main bg-coralpink" role="button" ng-click="openAddMemberModal()">
+        New User
+        <i class="fa fa-plus"></i>
+    </button>
+    <button class="btn btn-main bg-coralpink" role="button" ng-click="openAdExistingUserMemberModal()">
+        Add Existing User
+        <i class="fa fa-plus"></i>
+    </button>
+</videa-content-header>
+<videa-content>
+    <videa-content-list loadcontents="populateUserList()" contentlist="data" query="query" deletemodal="deleteMemberModal(msg, content)"  expanded="quickEditExpanded" editcontent="quickEditMember" properties="membersProperties" sort ="sort" sort-handler="sortUsers()" asc="asc" total-items="totalItems" current-page="currentPage" items-per-page="itemsPerPage" page-change-handler="pageChanged()" hide-drop-menu="false" loading="loadingMember" get-content="getMember(obj)">
+        <div ng-show="quickEditFormIsLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i>loading...</div>
+        <edit-member-directive content ="quickEditMember" action="quickEditAction" expanded="{{quickEditExpanded}}" load-users="populateUserList()" default-member-roles="defaultMemberRoles"></edit-member-directive>
+    </videa-content-list>
+</videa-content>

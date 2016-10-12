@@ -1,0 +1,23 @@
+<div>
+    <div class="previewer-viewer">
+      <div class="preview">
+          <!-- TODO: 'tablet-previewer': !vm.phone, 'tv-previewer': !vm.phone -->
+          <div ng-class="{'phone-previewer': vm.phone}">
+              <div class="device-screen">
+                <div class="component-list">
+                    <plugin-component ng-repeat="oneComponent in vm.screenChosen.getItems()" model="oneComponent" purpose="vm.purpose.PREVIEW" options="{index:$index}"></plugin-component>
+                </div>
+                <div class="add-component" ng-click="vm.addComponent()">
+                    Add Component
+                </div>
+              </div>
+          </div>     
+          <div class="save-button--bar">
+              <button class="btn btn-main bg-darkblue" ng-click="vm.saveScreen()">SAVE SCREEN</button>
+          </div>
+      </div>
+    </div>
+    <div class="property-viewer" ng-if="vm.ready">
+        <property-viewer model="vm.componentChosen" ng-if="vm.componentChosen" ignore="vm.ignore" config="vm.uiConfigId" account="vm.accountId" app="vm.appId" brand="vm.brandId"></property-viewer>
+    </div>
+</div>

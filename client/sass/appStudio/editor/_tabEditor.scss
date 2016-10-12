@@ -1,0 +1,31 @@
+.complex-model-tab-editor {
+
+  padding-left: 0px;
+  margin-bottom: 0px;
+  list-style-type: none;
+  
+  .complex-tab {
+	padding-left: 0;
+	margin-bottom: 30px;
+	border-bottom: 1px solid $theme_cloudyblue;
+
+	li {
+	  display: inline-block;
+	  margin-right: 25px;
+	  //font-size: $navigation_fontsize;
+	  //color: $theme_darkblue;
+	  @include Gotham-Book-Font(16px, $theme_greyblue);
+	  cursor: pointer;
+	}
+
+	.active {
+	  @include Gotham-Medium-Font(16px, $theme_coralpink);
+	}
+
+	.activetab {
+	  height: 4px;
+	  background-color: $theme_coralpink;
+	  margin-top: 7px;
+	}
+  }
+}

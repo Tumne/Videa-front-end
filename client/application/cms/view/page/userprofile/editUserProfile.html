@@ -1,0 +1,49 @@
+﻿<form role="form" class="form-horizontal">
+    <input type="hidden" name="Id" ng-model="data.Id" />
+    <fieldset>
+        <div class="alert alert-danger" ng-show="errorMsg">
+            {{errorMsg}}
+        </div>
+        <div class="alert alert-success" ng-show="successMsg">
+            {{successMsg}}
+        </div>
+        <div class="form-group">
+            <label for="userInputUsername" class="col-sm-2 control-label">Username</label>
+            <div class="col-sm-10">
+                <input id="userInputUsername" class="form-control" placeholder="Username" name="username" type="text" autofocus ng-model="data.Username" disabled="disabled" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userInputEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input id="userInputEmail" class="form-control" placeholder="Email" name="email" type="text" ng-model="data.Email" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userInputFirstName" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+                <input id="userInputFirstName" class="form-control" placeholder="FirstName" name="email" type="text" ng-model="data.FirstName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userInputLastName" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+                <input id="userInputLastName" class="form-control" placeholder="LastName" name="email" type="text" ng-model="data.LastName" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="userInputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+                <input id="userInputPassword" class="form-control" placeholder="Password" name="password" type="password" value="">
+            </div>
+        </div>
+        <!-- Change this to a button or input when using this as a form -->
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button class="btn btn-secondary bg-darkmint" ng-click="saveCallback()">Save</button>
+                <button class="btn btn-main bg-darkmint" ng-click="saveAndCloseCallback()">Save and Close</button>
+                <button class="btn btn-secondary bg-orangeyellow" ng-click="cancelCallback()">Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,10 @@
+﻿<div class="row">
+    <div class="container-fluid">
+        <form role="form" class="form-horizontal">
+            <input type="hidden" name="id" ng-model="data.id" />
+            <fieldset>
+				<content-text-attribute-directive label-name="'Name'" value="data.name" edit="'view'" expanded="expanded" onupdate="saveCallback()" area="'false'"></content-text-attribute-directive>
+            </fieldset>
+        </form>
+    </div>
+</div>

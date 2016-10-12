@@ -1,0 +1,18 @@
+﻿
+<spinner></spinner>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+  ">
+    <!-- main -->
+    <div class="col">
+        <!-- main header -->
+        <!-- / main header -->
+        <div ui-view>
+        </div>
+    </div>
+    <!-- / main -->
+</div>
+<div ng-repeat="al in page.getAlerts()" class="alert-popup" ng-class="{'alert' : true,  'alert-{{al.type}}' : true, 'alert-dismissible': true}" ng-style="{'top' : '{{70 + $index * 70}}px'}" role="alert">
+    <button type="button" class="close" ng-click="al.dismissAlert()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+    {{al.message}}
+</div>

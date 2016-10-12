@@ -1,0 +1,27 @@
+<div class="listener-create-component">
+    <div class="object-editor">
+        <div class="text-combobox-component" ng-if="vm.ready">
+            <div class="title">Choose an Event </div>
+            <ui-select tagging ng-model="vm.modelObject" theme="bootstrap" title="" on-select="vm.updateEventComboBoxValues($item)">
+                <ui-select-match placeholder="Select your Event">{{$select.selected.title}}</ui-select-match>
+                <ui-select-choices repeat="oneEvent in vm.eventOptions">
+                    <div ng-bind-html="oneEvent.title"></div>
+                </ui-select-choices>
+            </ui-select>            
+        </div>
+        <div class="text-combobox-component" ng-if="vm.ready">
+            <div class="title">Choose an Action </div>
+            <ui-select tagging ng-model="vm.actionObject" theme="bootstrap" title="" on-select="vm.updateActionComboBoxValues($item)">
+                <ui-select-match placeholder="Select your Action">{{$select.selected.title}}</ui-select-match>
+                <ui-select-choices repeat="oneAction in vm.actionOptions">
+                    <div ng-bind-html="oneAction.title"></div>
+                </ui-select-choices>
+            </ui-select>            
+        </div>
+        <plugin-component ng-if="vm.actionReady"
+            model="vm.scope.model.getAction()"
+            purpose="vm.purpose.EDIT"
+            options="vm.options">
+        </plugin-component>        
+    </div>
+</div>

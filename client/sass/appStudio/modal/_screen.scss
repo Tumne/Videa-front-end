@@ -1,0 +1,177 @@
+.create-screen-modal {
+  .screen-list-view {
+    padding-left: 25px;
+    padding-right: 25px;
+    
+    .title {
+    @include Gotham-Book-Font($theme_header_fontsize, $theme_darkblue);
+    padding-top: 25px;
+    padding-bottom: 20px; 
+    text-align: left;
+    }
+    
+    .screen-selection {
+      ul {
+        list-style-type: none;
+        padding-left: 0px;
+        text-align: center;
+        margin-bottom: 20px;
+        
+        li {
+          display: inline-block;
+          margin-right: 15px;
+          width: 20%;
+          vertical-align: top;
+          img {
+            border: 1px solid $theme_greyblue;
+          }
+          
+          .subtitle {
+            @include Gotham-Book-Font(15px, $theme_greyblue);
+            height: 45px;
+          }
+          
+          .description {
+            @include Gotham-Book-Font($font_title_fontsize, $theme_greyblue);
+          }
+        }
+      }
+      
+      .next-row {
+        margin-bottom: 20px;
+      }
+    }
+    
+    
+  }
+  
+
+  .screen-create-view {
+     height: 375px;
+    
+    .form-group {
+      height: 265px;
+    }
+    .hide-screen {
+      opacity: 0 !important;
+    }
+    
+    .show-screen {
+      opacity: 1 !important;
+    }
+
+    .screen-name {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 25px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .screen-hidden {
+      -webkit-transition: 0.2s linear;
+      /*to only change opacity*/
+      /*-webkit-transition: opacity 1s linear*/
+      -moz-transition: 0.2s linear;
+      -o-transition: 0.2s linear;
+      transition: 0.2s linear;
+      -webkit-transition-delay: 0.2s; /* Safari */
+      transition-delay: 0.2s;
+      opacity: 0;
+    }
+    .screen-select {
+      position:relative;
+      width: 460px;      
+      margin: 0 auto;
+
+      -webkit-transition: 0.1s linear;
+      /*to only change opacity*/
+      /*-webkit-transition: opacity 1s linear*/
+      -moz-transition: 0.1s linear;
+      -o-transition: 0.1s linear;
+      transition: 0.1s linear;
+      opacity: 1;
+      
+
+
+      .screen-option-frame {
+        position:relative;
+        width: 110px;
+        float:left;
+        margin: 0px 20px;
+        color: #6b94b3;
+        cursor: pointer;
+        font-size: 13px;
+        
+          .screen-option {
+            width: 100%;
+            height: 150px;
+            border: 1px solid #6b94b3;
+            background: white;
+            margin-bottom: 10px;
+          } 
+          .screen-advanced {
+            background-image: url('/images/advanced-editor-copy.png');
+          }
+
+
+        .screen-selected {
+          border: 1px solid #ff676c;
+        }
+        .screen-name-selected {
+          color: #ff676c;
+        }
+
+      }
+
+    }
+
+
+
+    .button-row {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .screen-name-frame {
+      position:fixed;
+      top:150px;
+      width:100%;
+
+  
+      .screen-name-input {
+        position:relative;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        -webkit-transition: 0.2s linear;
+        /*to only change opacity*/
+        /*-webkit-transition: opacity 1s linear*/
+        -moz-transition: 0.2s linear;
+        -o-transition: 0.2s linear;
+        transition: 0.2s linear;
+        -webkit-transition-delay: 0.2s; /* Safari */
+        transition-delay: 0.2s;
+        opacity: 0;        
+
+      }
+    }
+  }
+}
+
+.add-component-modal {
+    .add-component {
+        width: 25%;
+        float:left;
+        text-align: center;
+        cursor: pointer;
+        span {
+            @include Gotham-Book-Font(12px, $theme_darkblue);
+            line-height: 15px;
+        }
+        
+        img {
+            width: 100%;
+            margin-top: -20px;
+        }
+    }    
+}

@@ -1,0 +1,72 @@
+﻿<div class="modal-header">
+	<h4 ng-show="editType === 'add'" class="modal-title" id="myModalLabel">Add Field</h4>
+	<h4 ng-show="editType === 'edit'" class="modal-title" id="myModalLabel">Edit Field</h4>
+</div>
+<div class="modal-body">
+	<div class="col-md-12">
+		<div ng-show="editType == 'add'" class="form-group">
+			<label class="label-new-line">
+				Field
+			</label>
+
+			<select class="form-control"  ng-change="selectedField()" ng-model="fieldSelectedObj">
+				<option value="">select field</option>
+				<option value="new">Create new</option>
+				<option ng-repeat="item in fieldsList" value="{{item}}">{{item.name}}</option>
+			</select>
+		</div>
+		<div ng-show="choosedField || editType == 'edit'">
+			<div class="row" >
+				<div class="col-md-12 text-left">
+					Field Name
+				</div>
+				<div class="col-md-12">
+					<span ng-if="!isNewField" class="input-sm form-control text-left">{{data.fieldName}}</span>
+					<input ng-if="isNewField"  type="text" class="input-sm form-control" ng-model="data.fieldName" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-left">
+					Field Size
+				</div>
+				<div class="col-md-12">
+					<span ng-if="!isNewField" class="input-sm form-control text-left">{{data.fieldSize}}</span>
+					<select ng-if="isNewField"  class="form-control" ng-options="item.value as item.title for item in fieldsSizes" ng-model="data.fieldSize">
+						<option value="">Choose size</option>
+					</select>
+				</div>
+			</div>
+			<div class="row" >
+				<div class="col-md-12 text-left">
+					Field Type
+				</div>
+				<div class="col-md-12">
+					<span ng-if="!isNewField" class="input-sm form-control text-left">{{data.fieldType}}</span>
+					<select ng-if="isNewField" class="form-control" ng-model="data.fieldType" ng-disabled="editType !== 'add'">
+						<option ng-repeat="value in valuesList" value="{{value}}">{{value}}</option>
+					</select>
+				</div>
+			</div>
+			<br />
+			<div ng-if="isNewField" class="row " ng-show="isDropDown(data.fieldType) ">
+				<div class="col-md-12 text-left">
+					List Items
+				</div>
+				<div class="col-md-12">
+					<textarea class="form-control" type="text" ng-model="data.itemsList"></textarea>
+					<p>Split values using comma (Example: "one,two,three").</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-footer">
+	<button ng-show="editType === 'edit'" class="btn btn-secondary bg-red" ng-click="del()">
+		<span>Delete</span>
+	</button>
+	<button class="btn btn-secondary-auto-width bg-darkmint" ng-click="ok()">
+		<span ng-show="editType === 'add'">Add</span>
+		<span ng-show="editType === 'edit'">Update</span>
+	</button>
+	<button class="btn btn-secondary-auto-width bg-greyblue" ng-click="cancel()">Cancel</button>
+</div>

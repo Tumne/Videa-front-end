@@ -1,0 +1,15 @@
+<div>
+	<div class="has-one-component color-component" ng-if="vm.ready">
+		<div class="title">{{vm._scope.options.title}}</div>
+		<div class="color-component-card">
+			<color-picker ng-model="vm.color.value"
+							color-picker-format="'hex8'"
+							color-picker-alpha="true"
+							color-picker-swatch="true"
+							color-picker-swatch-bootstrap="false"
+							color-picker-swatch-only="false"
+							color-picker-case="upper"></color-picker>
+		</div>
+	</div>	
+</div>
+

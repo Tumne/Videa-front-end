@@ -1,0 +1,80 @@
+.config-editor--navigation {
+  padding-left: 0px;
+  margin-bottom: 0px;
+  li {
+    display: inline-block;
+    margin-right: 25px;
+    //font-size: $navigation_fontsize;
+    //color: $theme_darkblue;
+    @include Gotham-Book-Font(16px, $theme_greyblue);
+    cursor: pointer;
+  }
+
+  .active {
+    @include Gotham-Medium-Font(16px, $theme_coralpink);
+  }
+
+  .active-tab {
+    height: 4px;
+    background-color: $theme_coralpink;
+    margin-top: 7px;
+  }
+}
+
+.config-editor--navigation--divider {
+  min-width: $appstudio-width;
+  width: 100%;
+  border-top: 1px solid $theme_cloudyblue;
+  height: 2px;
+}
+
+.save-button--bar{
+  margin-bottom: 100px;
+}
+.config-editor-row{
+  position:fixed;
+  padding: 30px 0 98px;
+  height: 100px;
+  width: 100%;
+  background: #ebeef2;
+  z-index:10;
+
+}
+
+.ui-configuration-editor-row {
+  .complex-tab{
+    position:fixed;
+    width: 100%;
+    z-index:11;
+    top: 145px;
+  }
+  .content-editor{
+    margin-top:60px;
+  }
+}
+
+.config-editor-breadcrumb {
+  .config-editor-go-back {
+    padding-right: 10px;
+    padding-top: 5px;
+  }
+
+  .config-editor-device {
+    padding-right: 10px;
+
+    img{
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .breadcrumb-title {
+    padding-top: 5px;
+  }
+
+  .btn {
+    margin-top: 5px;
+  }
+}
+
+

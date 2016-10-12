@@ -1,0 +1,12 @@
+<div class="has-one-component" ng-if="vm.ready">
+    <br/>
+	<div class="title">{{vm._scope.options.title}}</div>
+	<object-editor object="vm._scope.model" ignore="vm.ignore"></object-editor>
+	<div class="slider">
+		<div class="slider-title">Range</div>
+		<rzslider  
+		rz-slider-model="vm.slide.minValue" 
+		rz-slider-high="vm.slide.maxValue"   
+		rz-slider-options="vm.slide.options"></rzslider>
+	</div>
+</div>

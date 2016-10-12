@@ -1,0 +1,40 @@
+<div class="navigation-row col-md-12">
+        <div class="left-section">
+            <div class="pull-left breadcrumb-title">
+                Application Dashboard
+            </div>
+        </div>
+        <div class="right-section">
+            <button class="btn pull-right btn-main bg-coralpink"
+                    ng-click="vm.newBrand()">SETUP A NEW BRAND</button>
+        </div>
+</div>
+<div ng-hide="vm.brandStartPage">
+    <div class="landing-page-header">Welcome to the App Studio Dashboard!</div>
+    <div class="header landing-page-body">
+        Here is where you can set up your brands and create the apps that you want to release to the world! Lets get started by setting up your first brand.
+    </div>
+</div>
+<brand-list-view ng-repeat="brand in vm.brands"
+		ng-if="vm.ready"
+    hasurl="brand.getImage()"
+    url="brand.getImage().url"
+    title="brand.getName()"
+    updatebuttons="vm.brandUpdateButtons"
+    buttons="vm.brandButtonActions"
+    model="brand"
+    savetitle="vm.editBrand">
+      <app-card ng-repeat="oneApp in vm.getAppsByBrand(brand)"
+                title="oneApp.getFieldValue('name')"
+                subtitle="oneApp.getAppType().name"
+                lastmodified="oneApp.getLastModified()"
+                edit="vm.showConfigManagement(oneApp)"
+                active-config="vm.getUIConfig(oneApp)"
+                model="oneApp"
+                editapp="vm.editApp(brand, oneApp)"
+                deleteapp="vm.deleteApp(brand, oneApp)">
+      </app-card>
+      <div class="empty-state text-center" ng-if="vm.getAppsByBrand(brand).length == 0 && vm.ready">
+          Click "Create A New App" to get started. 
+      </div>
+</brand-list-view>

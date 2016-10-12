@@ -1,0 +1,12 @@
+﻿<videa-content-header>
+    <button class="btn btn-main bg-coralpink dropdown-toggle" type="button" ng-click="openAddContentTypeModal()">
+        Create Type
+        <i class="fa fa-plus"></i>
+    </button>
+</videa-content-header>
+<videa-content>
+    <videa-content-list pagetitle ="Content Types" loadcontents="loadContentTypes()" query="query" contentlist="contentTypes" openmodal="openAddContentTypeModal()"  deletemodal="openDeleteModal(msg)"  expanded="quickEditExpanded" editcontent="quickEditType" properties="contentTypeProperties" sort ="sort" sort-handler="sortContentTypes()" asc="asc" total-items="totalItems" current-page="currentPage" items-per-page="itemsPerPage" page-change-handler="pageChanged()" hide-drop-menu="false" loading="loadingType" get-content="getType(obj)">
+        <div ng-show="quickEditFormIsLoading" class="text-center"><i class="fa fa-refresh fa-spin fa-lg"></i>loading...</div>
+        <contenttype-directive content="quickEditType" action="quickEditAction" expanded="{{quickEditExpanded}}" ></contenttype-directive>
+    </videa-content-list>
+</videa-content>

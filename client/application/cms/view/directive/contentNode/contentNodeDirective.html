@@ -1,0 +1,63 @@
+﻿<div class="wrapper">
+	<div class="row padder">
+		<div >
+			<label ng-hide="expanded" class="col-md-2 control-label">Id</label>
+			<label ng-show="expanded" class="col-md-12 span-no-padding col-align-left control-label">Id</label>
+			<div class="input-group">
+				<div ng-class="{'col-md-12' : expanded =='false', 'col-md-12' : expanded=='true'}" >
+					<p class="text-muted">{{data.id}}</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<br/>
+	<div class="row padder">
+		<div class="small">
+			{{data.type.name}}
+		</div>
+		<div class="">
+			<designation-field-directive expanded="expanded" onupdate="onUpdateDesignation(contentId, field, value)" contentid="data.id" field="designationField" value="data.designation" edit="viewMode" />
+		</div>
+	</div>
+
+
+	<div class="row wrapper">
+		<content-node-bucket-directive content="data" action="action" expanded="expanded" onupdate="onUpdateAvailability(contentId, availabilityList)" buckets-data="bucketsData" buckets-names="bucketsNames"/>
+	</div>
+	<div class="row wrapper">
+		<contentnode-workflow-directive content-id="data.id" state="data.workflowState" action="action" expanded="expanded" onupdate="onUpdateWorkflow(contentId, state, trigger)" />
+	</div>
+	<!-- Nav tabs -->
+	<uib-tabset>
+		<uib-tab ng-repeat="group in data.type.fieldGroups">
+			<uib-tab-heading>
+				{{group.name}}
+			</uib-tab-heading>
+			<div class="wrapper ">
+				<div class="container-fluid">
+					<form role="form" class="form-horizontal" enctype="multipart/form-data" method="post">
+						<input type="hidden" name="id" ng-model="data.id" />
+						<fieldset>
+
+							<div class="row" ng-repeat="row in group.rows">
+								<div ng-repeat="field in row.cols" ng-class="{'container': action == 'add', 'col-md-{{field.Size}}' : expanded == 'true', 'cursorpointer' : 'true' }">
+									<div bind-unsafe-html="field.directive"></div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</uib-tab>
+	</uib-tabset>
+	<!-- Change this to a button or input when using this as a form -->
+	<div class="form-group" ng-show="action != 'view' && action != 'quickedit' && expanded">
+		<div class="col-sm-offset-2 col-sm-10">
+			<button class="btn btn-secondary bg-darkmint" ng-click="saveCallback()" ng-disabled="preventSave">Save</button>
+			<button class="btn btn-secondary bg-orangeyellow" ng-click="cancelCallback()" ng-disabled="preventSave">Cancel</button>
+			<br />
+		</div>
+	</div>
+
+</div>

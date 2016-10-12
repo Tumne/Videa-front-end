@@ -1,0 +1,18 @@
+<div class="create-has-many-modal">
+    <div class="name-view">
+        <div class="object-editor">
+            <div class="text-component">
+                <br/>
+                <div class="title">{{vm.title}}</div>
+                <br/>
+                <input 
+                        type="text"
+                        ng-model="vm.field"
+                        placeholder="{{vm.title}}"/>
+            </div>
+        </div>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-main bg-darkblue" ng-click="vm.submit()" ng-disabled="vm.field.length < 1">ADD</button>
+        </div>        
+    </div>
+</div>

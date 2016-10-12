@@ -1,0 +1,48 @@
+<div class="bundle-component">
+    <div class="bundle-list">
+        <!-- <div class="bundle-dots"><i class="fa fa-ellipsis-v"></i></div> -->
+        <div class="bundle-content">
+            <edit-title title="vm.bundleName" savetitle="vm.editName"></edit-title>
+			<div class="modified-date">Modified: {{vm.modifiedDate | date : 'MMMM d, yyyy - h:mm a'}}</div>
+        </div>
+        <div class="config-actions">
+            <button class="btn btn-icon publish-bundle" ng-click="vm.publish()" ng-if="!vm._scope.options.published">
+				<img src="/images/publish-button.svg" class="center-button" uib-tooltip="Publish">
+			</button>
+            <button class="btn btn-icon republish-bundle" ng-click="vm.publish()"  ng-if="vm._scope.options.published">
+				<img src="/images/republish-button.svg" class="center-button" uib-tooltip="Republish">
+			</button>
+			<button class="btn btn-icon edit-bundle" ng-click="vm.editBundle(vm._scope.model, vm.versions)">
+				<img src="/images/edit-circle-button.svg" class="center-button" uib-tooltip="Edit">
+			</button>
+			<button class="btn btn-icon delete-bundle" ng-click="vm.delete()" ng-if="!vm._scope.options.published"><img
+					src="/images/delete-button.svg" class="center-button" uib-tooltip="Unbundle">
+			</button>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="version-list" ng-if="vm.versions.length > 0">
+        <div class="version-list-row" 
+             ng-repeat="oneVersion in vm.versions"
+             ng-if="vm.ready">
+            <!-- <div class="version-dots"><i class="fa fa-ellipsis-v"></i></div> -->
+            <div class="version-content">
+				<span class="name">{{oneVersion.getFieldValue('name')}}</span>
+				<div class="modified-date">Modified: {{oneVersion.getFieldValue('modifiedDate') | date : 'MMMM d, yyyy - h:mm a'}}</div>
+            </div>
+            <div class="config-actions">
+                <button class="btn btn-icon" ng-click="vm.editVersion(oneVersion)">
+					<img src="/images/edit-circle-button.svg" class="center-button" uib-tooltip="Edit">
+				</button>
+				<button class="btn btn-icon" ng-click="vm.duplicateVersion(oneVersion)">
+					<img src="/images/copy-button.svg" class="center-button" uib-tooltip="Duplicate">
+				</button>
+                <!--<button class="btn btn-icon" ng-click="vm.deleteVersion(oneVersion)" ng-if="!vm._scope.options.published" >-->
+                    <!--<img src="/images/delete-button.svg" class="center-button" uib-tooltip="Remove from bundle">-->
+                <!--</button>-->
+                    
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>

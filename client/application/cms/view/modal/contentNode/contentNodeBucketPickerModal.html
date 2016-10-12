@@ -1,0 +1,92 @@
+﻿
+<div class="modal-header">
+	<h4 class="modal-title" id="myModalLabel">
+		<span ng-show="edit">Edit Catalog</span>
+		<span ng-hide="edit">Add to Catalog</span>
+	</h4>
+</div>
+<div class="modal-body">
+	<br/>
+	<div class="col-md-12">
+		<div class="row hub-modal-row">
+			<div class="col-md-12 text-left">Catalog</div>
+			<div class="col-md-12">
+				<span ng-show="selectedBucket">{{selectedBucket}}</span>
+				<span ng-hide="selectedBucket">
+					<select  class="form-control" ng-change="selectedNewBucket()" ng-model="tempSelectedBucket" required>
+						<option value="">select catalog</option>
+						<option value="new">Create new</option>
+						<option ng-repeat="bucket in bucketsData" value="{{bucket}}">{{bucket.name}}</option>
+					</select>
+				</span>
+			</div>
+			<div class="label label-danger" ng-show="errorMessage">
+				{{errorMessage}}
+			</div>
+		</div>
+		<br/>
+		<div ng-show="chosenBucket && isNewBucket" class="row hub-modal-row" >
+			<div class="col-md-12 text-left">
+				Catalog Name
+			</div>
+			<div class="col-md-12 text-left">
+				<input type="text" class="input-sm form-control" ng-model="createdBucketName">
+			</div>
+		</div>
+		<div class="row hub-modal-row">
+			<div class="col-md-12 text-left">
+				No restrictions
+			</div>
+			<div class="col-md-12 text-left ">
+				<label class="i-checks">
+					<input  type="checkbox" ng-model="bucketDates.noRestrictions" ng-change="updateWithRestrictions()"/> <i> </i>
+				</label>
+			</div>
+		</div>
+		<div class="row hub-modal-row">
+			<div class="col-md-12 text-left">From Date</div>
+			<div ng-controller="DatepickerDemoCtrl" class="col-md-12">
+			<span class="input-group">
+				<input type="text" class="form-control text-availability-date" uib-datepicker-popup="{{format}}" ng-model="bucketDates.fromDate"
+					   is-open="calendar['c1']" datepicker-options="dateOptions"
+					   date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+					<span class="input-group-btn">
+						<button type="button" class="btn btn-default" ng-click="changeCalendar('c1'); open($event);"><i class="fa fa-calendar"></i></button>
+					</span>
+			</span>
+			</div>
+		</div>
+		<div class="row hub-modal-row">
+			<div class="col-md-12 text-left">
+				No expiry
+			</div>
+			<div class="col-md-12 text-left ">
+				<label class="i-checks">
+					<input  type="checkbox" ng-model="bucketDates.noExpiry" ng-change="updateWithExpiry()"/> <i> </i>
+				</label>
+			</div>
+		</div>
+		<div class="row hub-modal-row">
+			<div class="col-md-12 text-left">Expire Date</div>
+			<div ng-controller="DatepickerDemoCtrl" class="col-md-12">
+            <span class="input-group">
+                <input type="text" class="form-control text-availability-date" uib-datepicker-popup="{{format}}"
+					   ng-model="bucketDates.expireDate" is-open="calendar['c2']" min-date="bucketDates.fromDate"
+					   datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats"/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="changeCalendar('c2'); open($event);"><i class="fa fa-calendar"></i></button>
+                </span>
+            </span>
+			</div>
+		</div>
+		<br/>
+	</div>
+</div>
+
+<div class="modal-footer">
+	<button class="btn btn-secondary-auto-width bg-darkmint" ng-click="ok()">
+		<span ng-show="edit">Edit</span>
+		<span ng-hide="edit">Add</span>
+	</button>
+	<button class="btn btn-secondary-auto-width bg-greyblue" ng-click="cancel()">Close</button>
+</div>
